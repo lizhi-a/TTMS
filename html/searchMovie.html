@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索电影</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/search.css">
+    <link rel="stylesheet" href="../static/css/movie_person.css">
+    <link rel="stylesheet" href="../static/css/shop.css">
+    <link rel="stylesheet" href="../static/layui/css/layui.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li >
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit"></button>
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div> 
+        <div class="header_placeholder"></div>
+
+
+            <div class="search_box">
+        
+
+            </div>
+
+            
+            <div class="search_resault_box">
+                <dl class="movie_list">
+                   
+                </dl>
+
+
+            </div>
+            <div class="search_resault_box_shop">
+                <div class="no_search">
+                    <span class="title">很抱歉，没找到相关的影院</span>
+                    <p class="red">小喵建议您：</p>
+                    <p>1. 请检查输入的关键词是否有误</p>
+                    <p>2. 请缩短关键词</p>
+                </div>
+            </div>
+
+            <div id="test1"></div>
+            <div id="test2"></div>
+            <div class="footer">
+                <p class="first_links">
+                    关于猫眼 :
+                    <a href="#">关于我们</a>
+                    <span></span>
+                    <a href="#">管理团队</a>
+                    <span></span>
+                    <a href="#">投资者团队</a> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 友情链接 :
+                    <a href="#">美团网</a>
+                    <span></span>
+                    <a href="#">格瓦拉</a>
+                    <span></span>
+                    <a href="#">美团下载</a>
+                    <span></span>
+                    <a href="#">欢喜首映</a>
+
+                </p>
+                <p>
+                    商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+                </p>
+                <p>
+                    用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+                </p>
+                <p>
+                    <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+                    <span></span>
+                    <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+                </p>
+                <p>
+                    <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+                    <span></span>
+                    <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+                </p>
+                <p>
+                    <a href="#">猫眼用户服务协议 </a>
+                    <span></span>
+                    <a href="#">猫眼平台交易规则总则 </a>
+                    <span></span>
+                    <a href="#">隐私政策 </a>
+                </p>
+
+                <p>
+                    <a href="#">京公网安备11010102003232号</a>
+                    <span></span>
+                    <a href="#">京ICP备16022489号-1</a>
+                </p>
+                <p>
+                    北京猫眼文化传媒有限公司
+                </p>
+                <p>
+                    猫眼电影 maoyan.com
+                </p>
+                <div class="certificate">
+                    <a href="#">
+                        <img src="../static/image/footer1.png" alt="">
+                    </a>
+
+                    <a href="#">
+                        <img src="../static/image/footer2.png" alt="">
+                    </a>
+
+                    <a href="#">
+                        <img src="../static/image/footer3.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+</body>
+<script src="../node_modules/jQuery/dist/jquery.js"></script>
+<script src="../static/layui/layui.js"></script>
+<script src="../static/js/header.js"></script>
+<script>
+    function GetTime(date) {
+    var datee = new Date(date).toJSON();
+    return new Date(+new Date(datee) + 8 * 3600 * 1000).toISOString().
+      replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+    }
+    
+var userJsonStr = sessionStorage.getItem('SearchCInformation');
+var userEntity = JSON.parse(userJsonStr);
+console.log(userEntity.name)
+var name ;
+var page = 0;
+var page2 = 0;
+$.ajax({
+      url: `http://localhost:8080/searchMoviesByName/${userEntity.name}/0`,
+      type: 'get',
+      dataType: 'json',
+      async:false,
+      contentType: 'application/json;charset=UTF-8',
+      success: data => {
+          name = userEntity.name;
+          page = data[data.length-1].id+1;
+        console.log(data)
+        var str = ``;
+        $(".movie_list").empty()
+        for(var i=0;i<data.length-1;i++){
+            str+=` <dd>
+                        <div class="movie_item">
+                            <a href="#">
+                                <div class="movie_photo">
+                                    <img src="${data[i].movieHead}" alt="" width="160px" height="220px">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="movie_item_title">
+                            <a href="#">${data[i].movieName}</a>
+                        </div>
+                       
+
+                        <div class="movie_info">
+                            <div class="movie_score">
+                                <span class="integer">${data[i].movieScore}</span>
+                            </div>
+
+                            <div class="movie_type">${data[i].movieType}</div>
+                            <div class="movie_show">${GetTime(data[i].movieStart).substr(0,10) } ${data[i].movieArea}上映</div>
+                        </div>
+                    </dd>
+            `
+        }
+        var parent = $(".movie_list")
+        parent.append(str)
+      },
+      error: function (data) {
+
+        var json = JSON.stringify(data);
+
+        $(".search_resault_box").css({"display":"none"});
+        $(".search_resault_box_shop").css({"display":"block"});
+
+       
+        }
+    })
+
+
+    layui.use('laypage', function(){
+  var laypage = layui.laypage;
+  
+  //执行一个laypage实例
+  laypage.render({
+    elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+    ,count: page*10
+    ,theme: '#ef4238'
+    ,limit:10 //数据总数，从服务端得到
+    ,jump: function(obj, first){
+    //obj包含了当前分页的所有参数，比如：
+    console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+    console.log(obj.limit); //得到每页显示的条数
+    $.ajax({
+      url: `http://localhost:8080/searchMoviesByName/${userEntity.name}/${obj.curr-1}`,
+      type: 'get',
+      dataType: 'json',
+      async:false,
+      contentType: 'application/json;charset=UTF-8',
+      success: data => {
+        
+        console.log(name)
+        var str = ``;
+        $(".movie_list").empty()
+        for(var i=0;i<data.length-1;i++){
+            str+=` <dd data-id="${data[i].id}" data-status ="${data[i].movieStatus}">
+                        <div class="movie_item">
+                            <a href="#">
+                                <div class="movie_photo">
+                                    <img src="${data[i].movieHead}" alt="" width="160px" height="220px">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="movie_item_title">
+                            <a href="#">${data[i].movieName}</a>
+                        </div>
+                       
+
+                        <div class="movie_info">
+                            <div class="movie_score">
+                                <span class="integer">${data[i].movieScore}</span>
+                            </div>
+
+                            <div class="movie_type">${data[i].movieType}</div>
+                            <div class="movie_show">${GetTime(data[i].movieStart).substr(0,10) } ${data[i].movieArea}上映</div>
+                        </div>
+                    </dd>
+            `
+        }
+        var parent = $(".movie_list")
+        parent.append(str)
+      },
+      error: function (data) {
+
+        $(".search_resault_box").css({"display":"none"});
+        $(".search_resault_box_shop").css({"display":"block"});
+
+       
+        }
+    })
+    //首次不执行
+    if(!first){
+      //do something
+    }
+  }
+  });
+
+
+ 
+});
+
+$('body').on('click','.movie_list dd',function(){
+        var id = $(this).attr('data-id');
+        var status = $(this).attr('data-status');
+        console.log(id);
+        console.log(status);
+        var str = {
+            "id":id,
+            "status":status
+        }
+        sessionStorage.setItem('movieInformation', JSON.stringify(str));
+        window.open("movieIntroduce.html");
+    })
+
+
+</script>
+
+<script src="../static/js/header.js"></script>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影介绍</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+   <link rel="stylesheet" href="../static/css/reset.css">
+   <link rel="stylesheet" href="../static/css/iconfont.css">
+    <link rel="stylesheet" href="../static/css/movieIntroduce.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+    <link rel="stylesheet" href="../static/css/cinemaName.css">
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+</head>
+<style>
+    .contents{
+        display: block;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li>
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li class="first_list">
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+   
+    <div class="contents">
+        <div class="part1">
+            <div class="province">
+                <span>省：</span>
+                <ul>
+                    <li>全部</li>
+                    <li data-id="110000">北京市</li>
+                    <li data-id="120000">天津市</li>
+                    <li data-id="130000">河北省</li>
+                    <li data-id="140000">山西省</li>
+                    <li data-id="150000">内蒙古自治区</li>
+                    <li data-id="210000">辽宁省</li>
+                    <li data-id="220000">吉林省</li>
+                    <li data-id="230000">黑龙江省</li>
+                    <li data-id="310000">上海市</li>
+                    <li data-id="320000">江苏省</li>
+                    <li data-id="330000">浙江省</li>
+                    <li data-id="340000">安徽省</li>
+                    <li data-id="350000">福建省</li>
+                    <li data-id="360000">江西省</li>
+                    <li data-id="370000">山东省</li>
+                    <li data-id="410000">河南省</li>
+                    <li data-id="420000">湖北省</li>
+                    <li data-id="430000">湖南省</li>
+                    <li data-id="440000">广东省</li>
+                    <li data-id="450000">广西壮族自治区</li>
+                    <li data-id="460000">海南省</li>
+                    <li data-id="500000">重庆市</li>
+                    <li data-id="510000">四川省</li>
+                    <li data-id="520000">贵州省</li>
+                    <li data-id="530000">云南省</li>
+                    <li data-id="540000">西藏自治区</li>
+                    <li data-id="610000">陕西省</li>
+                    <li data-id="620000">甘肃省</li>
+                    <li data-id="630000">青海省</li>
+                    <li data-id="640000">宁夏回族自治区</li>
+                    <li data-id="650000">新疆维吾尔自治区</li>
+                    <li data-id="710000">台湾省</li>
+                    <li data-id="810000">香港特别行政区</li>
+                    <li data-id="820000">澳门特别行政区</li>
+                </ul>
+            </div>
+            <div class="city">
+                <span>市：</span>
+                <ul>
+                    <li>全部</li>
+                </ul>
+            </div>
+            <div class="district">
+                <span>区：</span>
+                <ul>
+                    <li>全部</li>
+                </ul>
+            </div>
+        </div>
+        <div class="part2">
+            <div>
+                <div class="part2Title">
+                    <h2 class="iconfont clearfix">&#xe75f;影院列表</h2>
+                </div>
+                
+                <ul class="cinema">
+                    
+                </ul>
+
+            </div>
+        </div>
+        <div id="test1"></div>
+    </div>
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a>
+
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            友情链接 : 
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+            
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+            
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+    <script src="../node_modules/jQuery/dist/jquery.js"></script>
+    <script src="../static/layui/layui.js"></script>
+<script>
+    var provinceId = 0;
+    var cityId = 0;
+    var areaId = 0;
+    var page = 1;
+    var allpage = 0;
+    
+        $.ajax({
+            url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${page}`,
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=UTF-8',
+            success: data => {
+                console.log(data)
+                
+                allpage =Number(data.data[data.data.length-1].cinemaName) ;
+                console.log(allpage)
+                
+            }
+        })
+        
+        layui.use('laypage', function(){
+          var laypage = layui.laypage;
+          
+          //执行一个laypage实例
+          laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: allpage*20
+            ,limit: 20
+            ,theme: '#ef4238' //数据总数，从服务端得到
+            ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            page = obj.curr;
+            $.ajax({
+            url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${page}`,
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json;charset=UTF-8',
+            success: data => {
+                console.log(data)
+                $('.cinema').empty()
+                var str11 = ``;
+                for(var i = 0;i<data.data.length-1;i++){
+                    if(data.data[i].lawMoney == 0 || data.data[i].lawMoney == null){
+                        str11+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span style="color:#ef4238"> 暂无参考</span>
+                                <br>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    `
+                    }
+                    else{
+                        str11+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">￥${data.data[i].lawMoney}元</span><span class="span2">起</span>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ann">
+                            <a data-num="${data.data[i].cinemaNumber}"  data-id="${data.data[i].id}"><div class="buy">选座购票</div></a>
+                        </div>
+                    </li>
+                    `
+                    }
+                    
+                }
+                allpage =Number(data.data[data.data.length-1].cinemaName) ;
+                console.log(allpage)
+                var parent11 = $('.cinema').eq(0);
+                parent11.append(str11);
+            },
+                error: function (data) {
+
+                    $('.cinema').empty()
+                }
+        })
+        
+            //首次不执行
+            if(!first){
+              //do something
+            }
+          }
+          });
+        });
+        
+        $(".province li:first-child").addClass("On");
+        $(".city li:first-child").addClass("On");
+        $(".district li:first-child").addClass("On");
+        $("body").on("click",".province li",function(){
+            $(".province li").removeClass("On");
+            $(this).addClass("On");
+            $(".city").css({"display":"block"});
+            $(".district").css({"display":"none"});
+            if($(this).html()=="全部"){
+                $(".city").css({"display":"none"});
+                provinceId =0
+                cityId = 0
+                areaId = 0
+            }
+            else{
+                provinceId = $(this).attr("data-id");
+                cityId = 0;
+                areaId = 0
+            }  
+            // console.log(provinceId)
+        })
+        $("body").on("click",".city li",function(){
+            $(".city li").removeClass("On");
+            $(this).addClass("On");
+            $(".district").css({"display":"block"});
+            if($(this).html()=="全部"){
+                $(".district").css({"display":"none"});
+                provinceId = $(".province .On").attr("data-id");
+                cityId =0;
+                areaId = 0;
+            }else{
+                cityId = $(this).attr("data-id");
+                areaId = 0;
+            }
+            
+            console.log(cityId)
+        })
+        $("body").on("click",".district li",function(){
+            $(".district li").removeClass("On");
+            $(this).addClass("On");
+            if($(this).html()=="全部"){
+                areaId =0
+            }else{
+                areaId = $(this).attr("data-id");
+            }
+            
+            // console.log(areaId)
+        })
+        // $("title").html(`${data.movieName}_电影票_特惠购票_低价订票-猫眼电影`)
+
+      
+        // var f = 0;
+        $("body").on("click",".part1 li",function () {
+
+            $.ajax({
+                url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/0`,
+                type: 'get',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    allpage =Number(data.data[data.data.length-1].cinemaName) ;
+                    console.log(allpage)
+                }
+            })
+
+            $.ajax({
+                url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/0`,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    console.log(data)             
+                    $('.cinema').empty()
+                    var str1 = ``;
+                    for(var i = 0;i<data.data.length-1;i++){
+                        if(data.data[i].lawMoney == 0 || data.data[i].lawMoney == null){
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span style="color:#ef4238"> 暂无参考</span>
+                                <br>
+                            </div>
+                        </div>
+
+                    </li>
+                    `
+                        }
+                        else{
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">￥${data.data[i].lawMoney}元</span><span class="span2">起</span>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ann">
+                            <a data-num="${data.data[i].cinemaNumber}"  data-id="${data.data[i].id}"><div class="buy">选座购票</div></a>
+                        </div>
+                    </li>
+                    `
+                        }
+                    }
+
+
+                    // if(!jQuery.isEmptyObject(data.local)){
+                        var parent1 = $('.cinema').eq(0);
+                        parent1.append(str1);
+                        if($(this).parent().parent().attr("class") == "province"){
+                            if($(this).html()=="全部"){
+                                console.log(2)
+                            }
+                            else{
+                                $('.city ul').empty()
+                                var strCity = `<li class = "On">全部</li>`;
+                                for(var i = 0;i<data.local.length;i++){
+                                    strCity+=`<li data-id="${data.local[i].id}">${data.local[i].cityName}</li>
+                                    `
+                                }
+                                var parent = $('.city ul');
+                                parent.append(strCity);
+                            }
+                            
+                        }
+                        if($(this).parent().parent().attr("class") == "city"){
+                            $('.district ul').empty()
+                            var strCity = `<li class = "On">全部</li>`;
+                            for(var i = 0;i<data.local.length;i++){
+                                strCity+=`<li data-id="${data.local[i].id}">${data.local[i].areaName}</li>
+                                `
+                            }
+                            var parent = $('.district ul');
+                            parent.append(strCity);
+                        }
+                        
+                    // }
+                    
+                    
+                    
+                    
+                },
+                error: function (data) {
+
+                    $('.cinema').empty()
+                }
+            })
+           
+
+        layui.use('laypage', function(){
+          var laypage = layui.laypage;
+          
+          //执行一个laypage实例
+          laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: allpage*20
+            ,limit: 20
+            ,theme: '#ef4238' //数据总数，从服务端得到
+            ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            page = obj.curr;
+           $.ajax({
+                url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${page}`,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    console.log(data)             
+                    $('.cinema').empty()
+                    var str1 = ``;
+                    for(var i = 0;i<data.data.length-1;i++){
+                        if(data.data[i].lawMoney == 0 || data.data[i].lawMoney == null){
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span style="color:#ef4238"> 暂无参考</span>
+                                <br>
+                            </div>
+                        </div>
+
+                    </li>
+                    `
+                        }
+                        else{
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">￥${data.data[i].lawMoney}元</span><span class="span2">起</span>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ann">
+                            <a data-num="${data.data[i].cinemaNumber}"  data-id="${data.data[i].id}"><div class="buy">选座购票</div></a>
+                        </div>
+                    </li>
+                    `
+                        }
+                    }
+
+
+                    // if(!jQuery.isEmptyObject(data.local)){
+                        var parent1 = $('.cinema').eq(0);
+                        parent1.append(str1);
+                        if($(this).parent().parent().attr("class") == "province"){
+                            if($(this).html()=="全部"){
+                                console.log(2)
+                            }
+                            else{
+                                $('.city ul').empty()
+                                var strCity = `<li class = "On">全部</li>`;
+                                for(var i = 0;i<data.local.length;i++){
+                                    strCity+=`<li data-id="${data.local[i].id}">${data.local[i].cityName}</li>
+                                    `
+                                }
+                                var parent = $('.city ul');
+                                parent.append(strCity);
+                            }
+                            
+                        }
+                        if($(this).parent().parent().attr("class") == "city"){
+                            $('.district ul').empty()
+                            var strCity = `<li class = "On">全部</li>`;
+                            for(var i = 0;i<data.local.length;i++){
+                                strCity+=`<li data-id="${data.local[i].id}">${data.local[i].areaName}</li>
+                                `
+                            }
+                            var parent = $('.district ul');
+                            parent.append(strCity);
+                        }
+                        
+                    // }
+                    
+                    
+                    
+                    
+                },
+                error: function (data) {
+
+                    $('.cinema').empty()
+                }
+            })
+           
+            //首次不执行
+            if(!first){
+              //do something
+            }
+          }
+          });
+        });    
+
+                
+            
+        })
+        
+
+        $("body").on("click",".ann a",function(){
+        var cinemaId1 = $(this).attr("data-id")
+        var movieId1 = $(this).attr("data-num")
+        console.log(cinemaId1)
+        var str = {
+            "cinemaId":cinemaId1,
+            "movieId":movieId1
+        }
+        sessionStorage.setItem('allcinemaInformation', JSON.stringify(str));
+        window.open("movieTime.html");
+    })
+</script>
+<script src="../static/js/header.js"></script>
+<!-- <script src="../node_modules/jQuery/dist/jquery.js"></script> -->
+<script src="../static/js/header.js"></script>
+</body>
+
+</html>

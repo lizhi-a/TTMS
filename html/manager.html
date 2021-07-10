@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../static/js/node_modules/layui/dist/css/layui.css" media="all">
+  <!-- <link rel="stylesheet" type="text/css" href="../static/js/node_modules/layui/dist/css/layui.css"> -->
+  <link rel="stylesheet" href="../static/css/manager.css">
+  <link rel="stylesheet" href="../static/css/cinema.css">
+  <link rel="stylesheet" href="../static/css/manger_movie.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"> 经理系统 </div>
+  <div id="content">
+    <!-- 
+      功能：管理员界面左边的导航栏
+      不需改变
+     -->
+    <div id="left">
+      <ul id="menu">
+        <li class="menu_li" id="menu_cinema">
+          <p>电影院管理</p>
+        </li>
+        <li class="menu_li" id="menu_movie">
+          <p>电影管理</p>
+        </li>
+        <li class="menu_li" id="menu_office">
+          <p>票房管理</p>
+        </li>
+      </ul>
+    </div>
+    <!-- 
+      功能：点击左侧导航栏右侧内容发生变化
+      需要使用display属性改变对应内容
+     -->
+    <div id="right">
+      <!-- 
+        板块：电影院管理部分html
+       -->
+      <div class="right_box" id="right_cinema">
+        <button class="layui-btn new_button" id="new_cinema">新增</button>
+        <div class="right_content">
+          <div class="title_list content_line">
+            <p class="content_li cinema_name">影院名称</p>
+            <p class="content_li cinema_address">地址</p>
+            <p class="content_li cinema_img cinema_title_img">照片</p>
+            <p class="content_li cinema_money">盈利</p>
+            <p class="content_li cinema_num">电话</p>
+            <p class="content_li cinema_email">邮箱</p>
+            <p class="content_title cinema_operate">操作</p>
+          </div>
+        </div>
+        <div id="cinema_paging"></div>
+      </div>
+      <!-- 
+        板块：电影管理部分html
+       -->
+      <div id="" class="right_box" id="right_movie">
+        <button id="new_movie" class="layui-btn new_button">新增</button>
+        <div class="right_content" id="movie_content">
+        </div>
+        <div id="movie_pages">
+        </div>
+      </div>
+      <!-- 
+        板块：票房管理部分html
+       -->
+      <div id="" class="right_box" id="right_office">
+        <!-- <button id="new_movie" class="layui-btn new_button">新增</button> -->
+        <div class="right_content" id="office_content">
+        </div>
+        <div id="office_pages">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+    附加板块
+    内容：电影院板块的 新增、编辑管理员弹框html
+   -->
+  <div id="float_cinema" class="float_Popout">
+    <form class="layui-form new_Popout" id="new_cinema_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">影院名称:</label>
+        <div class="layui-input-inline">
+          <input type="text" style="width: 300px;" name="name" required lay-verify="required" placeholder="请输入影院名称"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <!-- <div class="layui-form-item" id="area-picker">
+        <label class="layui-form-label">地址：</label>
+        <div class="layui-input-inline" style="width: 330px;">
+          <div class="layui-input-inline " style="width: 100px;display: inline-block;margin:0px">
+            <select name="province" class="province-selector" data-value="广东省" lay-filter="province-1">
+              <option value="">请选择省</option>
+            </select>
+          </div>
+          <div class="layui-input-inline" style="width: 100px;display: inline-block;margin:0px">
+            <select name="city" class="city-selector" data-value="深圳市" lay-filter="city-1">
+              <option value="">请选择市</option>
+            </select>
+          </div>
+          <div class="layui-input-inline" style="width: 100px;display: inline-block;margin:0px">
+            <select name="county" class="county-selector" data-value="龙岗区" lay-filter="county-1">
+              <option value="">请选择区</option>
+            </select>
+          </div>
+        </div>
+      </div>
+       -->
+      <div class="layui-form-item" id="new_area-picker">
+        <label class="layui-form-label">地址：</label>
+        <div class="layui-input-inline" style="width: 330px;">
+          <div class="layui-input-inline " style="width: 100px;display: inline-block;margin:0px">
+            <select name="province" class="province-selector province-selector-two" data-value="广东省"
+              lay-filter="province-2">
+              <option value="">请选择省</option>
+            </select>
+          </div>
+          <div class="layui-input-inline" style="width: 100px;display: inline-block;margin:0px">
+            <select name="city" class="city-selector city-selector-two" data-value="深圳市" lay-filter="city-2">
+              <option value="">请选择市</option>
+            </select>
+          </div>
+          <div class="layui-input-inline" style="width: 100px;display: inline-block;margin:0px">
+            <select name="county" class="county-selector county-selector-two" data-value="龙岗区" lay-filter="county-2">
+              <option value="">请选择区</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">详细地址：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <input type="text" name="detail_address" required lay-verify="required" placeholder="请输入详细地址(去掉省市区)"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电话:</label>
+        <div class="layui-input-inline">
+          <input type="text" style="width: 300px;" name="number" required lay-verify="required" placeholder="请输入电话"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">邮箱:</label>
+        <div class="layui-input-inline">
+          <input type="text" style="width: 300px;" name="email" required lay-verify="required" placeholder="请输入邮箱"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_cinema_submit" class="layui-btn" lay-submit lay-filter="new_staff_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_new_cinema" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form edit_Popout" id="edit_cinema_form" action="">
+      <input id="edit_cinema_id" name="id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">影院名称:</label>
+        <div class="layui-input-inline">
+          <input id="edit_cinema_name" style="width: 300px;" type="text" name="name" required lay-verify="required"
+            placeholder="请输入影院名称" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item" id="edit_area-picker">
+        <label class="layui-form-label">地址：</label>
+        <div class="layui-input-inline" style="width: 330px;">
+          <div class="layui-input-inline " style="width: 100px;display: inline-block;margin:0px">
+            <select name="province" class="province-selector province-selector-two" data-value="广东省"
+              lay-filter="province-1">
+              <option value="">请选择省</option>
+            </select>
+          </div>
+          <div class="layui-input-inline" style="width: 100px;display: inline-block;margin:0px">
+            <select name="city" class="city-selector city-selector-two" data-value="深圳市" lay-filter="city-1">
+              <option value="">请选择市</option>
+            </select>
+          </div>
+          <div class="layui-input-inline" style="width: 100px;display: inline-block;margin:0px">
+            <select name="county" class="county-selector county-selector-two" data-value="龙岗区" lay-filter="county-1">
+              <option value="">请选择区</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item" id="area-picker">
+        <label class="layui-form-label">详细地址：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <input type="text" name="detail_address" required lay-verify="required" placeholder="请输入详细地址(去掉省市区)"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电话:</label>
+        <div class="layui-input-inline">
+          <input id="edit_cinema_num" style="width: 300px;" type="text" name="number" required lay-verify="required"
+            placeholder="请输入电话" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">邮箱:</label>
+        <div class="layui-input-inline">
+          <input id="edit_cinema_email" style="width: 300px;" type="text" name="email" required lay-verify="required"
+            placeholder="请输入邮箱" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="edit_staff_submit" class="layui-btn" lay-submit lay-filter="edit_staff_form">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_edit_cinema" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 
+      附加板块
+      内容：电影板块的 新增、编辑电影弹框html
+     -->
+  <div id="float_movie" class="float_Popout">
+    <form class="layui-form new_Popout" id="new_movie_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影名称:</label>
+        <div class="layui-input-inline">
+          <input type="text" style="width: 300px;" name="name" required lay-verify="required" placeholder="请输入电影名称"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item" id="new_movie_status">
+        <label class="layui-form-label">电影状态：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <select name="status" lay-verify="">
+              <option value="">请选择一个状态</option>
+              <option value="1">正在热映</option>
+              <option value="2">即将上映</option>
+              <option value="3">热播电影</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item" id="area-picker">
+        <label class="layui-form-label">上映时间：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <input id="movie_start_time" type="text" name="start_time" required lay-verify="required"
+              placeholder="请输入电影上映时间" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影时长:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="time" required lay-verify="required" placeholder="请输入电影时长" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影类型:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="sort" required lay-verify="required" placeholder="请输入电影类型" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影简介:</label>
+        <div class="layui-input-inline">
+          <!-- <input type="text" name="email" required lay-verify="required" placeholder="请输入邮箱" autocomplete="off"
+            class="layui-input"> -->
+          <textarea name="brief" id="movie_brief" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_movie_submit" class="layui-btn" lay-submit lay-filter="new_staff_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_new_movie" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form edit_Popout" id="edit_movie_form" action="">
+      <input id="edit_cinema_id" name="id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影名称:</label>
+        <div class="layui-input-inline">
+          <input type="text" style="width: 300px;" name="name" required lay-verify="required" placeholder="请输入电影名称"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item" id="new_movie_status">
+        <label class="layui-form-label">电影状态：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <select name="status" lay-verify="">
+              <option value="">请选择一个状态</option>
+              <option value="1">正在热映</option>
+              <option value="2">即将上映</option>
+              <option value="3">热播电影</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item" id="area-picker">
+        <label class="layui-form-label">上映时间：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <input id="movie_start_time" type="text" name="start_time" required lay-verify="required"
+              placeholder="请输入电影上映时间" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影时长:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="time" required lay-verify="required" placeholder="请输入电影时长" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影类型:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="sort" required lay-verify="required" placeholder="请输入电影类型" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影简介:</label>
+        <div class="layui-input-inline">
+          <!-- <input type="text" name="email" required lay-verify="required" placeholder="请输入邮箱" autocomplete="off"
+                  class="layui-input"> -->
+          <textarea name="brief" id="movie_brief" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_edit_submit" class="layui-btn" lay-submit lay-filter="new_staff_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_edit_movie" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  </form>
+  </div>
+  <script src="../static/js/node_modules/jquery/dist/jquery.js"></script>
+  <script src="../static/js/node_modules/layui/dist/layui.js"></script>
+  <script src="../static/js/manager.js"></script>
+  <script src="../static/js/cinema.js"></script>
+  <script src="../static/js/manager_movie.js"></script>
+  <script src="../static/js/movie_detail.js"></script>
+  <!-- 时间日期选择器 -->
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      laydate.render({
+        elem: '#movie_start_time',
+        type: 'datetime'
+      });
+
+    });
+  </script>
+  <!-- 监听提交 -->
+  <script>
+    //Demo
+    layui.use('form', function () {
+      var form = layui.form;
+
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        return false;
+      });
+    });
+  </script>
+  <!-- 三级联动 -->
+  <script>
+    //配置插件目录
+    layui.config({
+      base: '../mods/'
+      , version: '1.0'
+    });
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'layarea'], function () {
+      var layer = layui.layer
+        , form = layui.form
+        , layarea = layui.layarea;
+
+      layarea.render({
+        elem: '#area-picker',
+        change: function (res) {
+          //选择结果
+        }
+      });
+    });
+    layui.use(['layer', 'form', 'layarea'], function () {
+      var layer = layui.layer
+        , form = layui.form
+        , layarea = layui.layarea;
+
+      layarea.render({
+        elem: '#new_area-picker',
+        change: functionn (res) {
+          //选择结果
+        }
+      });
+    });
+    layui.use(['layer', 'form', 'layarea'], function () {
+      var layer = layui.layer
+        , form = layui.form
+        , layarea = layui.layarea;
+
+      layarea.render({
+        elem: '#edit_area-picker',
+        change: function (res) {
+          //选择结果
+        }
+      });
+    });
+  </script>
+  <!-- 已进入就获取电影院信息 -->
+  <script>
+    var total_staff_pages = ''
+    $.ajax({
+      url: `http://localhost:8080/getCinemas/1`,
+      type: 'get',
+      dataType: 'json',
+      async: false,
+      success: data => {
+        console.log('获取电影院信息', data)
+        var str = `
+          <div class="title_list content_line">
+            <p class="content_li cinema_name">影院名称</p>
+            <p class="content_li cinema_address">地址</p>
+            <p class="content_li cinema_img  cinema_title_img">照片</p>
+            <p class="content_li cinema_money">盈利</p>
+            <p class="content_li cinema_num">电话</p>
+            <p class="content_li cinema_email">邮箱</p>
+            <p class="content_title cinema_operate">操作</p>
+          </div>`
+        for (var i = 0; i < data.length - 1; i++) {
+          str += `
+          <form class="content_line">
+            <input value="${data[i].id}" hidden>
+            <p class="content_li cinema_name">${data[i].cinemaName}</p>
+            <p class="content_li cinema_address">${data[i].cinemaAddress}</p>
+            <p class="content_li cinema_img"><img src="${data[i].cinemaPicture}" alt="图片未加载成功"><input class="file_input" onchange="previewImage(this)" type="file"></p>
+            <p class="content_li cinema_money">${data[i].cinemaMoney}</p>
+            <p class="content_li cinema_num">${data[i].cinemaNumber}</p>
+            <p class="content_li cinema_email">${data[i].cinemaEmail}</p>
+            <p class="content_li cinema_operate">
+              <button type="reset" onclick="edit_cinema(this)" class="edit_button">编辑</button>
+              <button type="reset" class="delete_button delete_cinema">删除</button>
+            </p>
+          </form>`
+        }
+
+        var parent = $('.right_content').eq(0)
+        parent.empty()
+        parent.append(`${str}`)
+        total_staff_pages = (Number(data[data.length - 1].cinemaName)) * 5
+
+      }
+    })
+    layui.use('laypage', function () {
+      var laypage = layui.laypage;
+
+      // 执行一个laypage实例
+      laypage.render({
+        elem: 'cinema_paging' //注意，这里的 test1 是 ID，不用加 # 号
+        , count: total_staff_pages //数据总数，从服务端得到
+        , limit: 5
+        , theme: '#4299e1'
+        // 当分页被切换时触发，函数返回两个参数：
+        // obj（当前分页的所有选项值）、first（是否首次，一般用于初始加载的判断）
+        , jump: function (obj, first) {
+          //obj包含了当前分页的所有参数，比如：
+          // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+
+          $.ajax({
+            url: `http://localhost:8080/getCinemas/${obj.curr}`,
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            success: data => {
+              // console.log('分页电影院', data)
+
+              var parent = $('.right_content').eq(0)
+              parent.empty()
+
+              var str = `
+                <div class="title_list content_line">
+                  <p class="content_li cinema_name">影院名称</p>
+                  <p class="content_li cinema_address">地址</p>
+                  <p class="content_li cinema_img  cinema_title_img">照片</p>
+                  <p class="content_li cinema_money">盈利</p>
+                  <p class="content_li cinema_num">电话</p>
+                  <p class="content_li cinema_email">邮箱</p>
+                  <p class="content_title cinema_operate">操作</p>
+                </div>`
+              for (var i = 0; i < data.length - 1; i++) {
+                str += `
+                  <form class="content_line">
+                    <input value="${data[i].id}" hidden>
+                    <p class="content_li cinema_name">${data[i].cinemaName}</p>
+                    <p class="content_li cinema_address">${data[i].cinemaAddress}</p>
+                    <p class="content_li cinema_img"><img src="${data[i].cinemaPicture}" alt="图片未加载成功"><input onchange="previewImage(this)" class="file_input" type="file"></p>
+                    <p class="content_li cinema_money">${data[i].cinemaMoney}</p>
+                    <p class="content_li cinema_num">${data[i].cinemaNumber}</p>
+                    <p class="content_li cinema_email">${data[i].cinemaEmail}</p>
+                    <p class="content_li cinema_operate">
+                      <button type="reset" onclick="edit_cinema(this)" class="edit_button">编辑</button>
+                      <button type="reset" class="delete_button delete_cinema">删除</button>
+                    </p>
+                  </form>`
+              }
+              parent.append(`${str}`)
+            }
+          })
+        }
+      })
+    })
+    // 对应盒子显示
+
+    $('.right_box').each(function () {
+      $(this).css("display", "none");
+    })
+
+    var element = $('.right_box')[0];
+    $(element).css("display", "block");
+  </script>
+</body>
+
+</html>

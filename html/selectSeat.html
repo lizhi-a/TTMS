@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/selectSeat.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+    <title>选座</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li >
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div> 
+    <div class="container" id="app">
+        <div class="order-progress-bar">
+            <div class="step first done">
+                <span class="step-num">1</span>
+                <div class="bar"></div>
+                <span class="step-text">选择影片场次</span>
+            </div>
+            <div class="step done">
+                <span class="step-num">2</span>
+                <div class="bar"></div>
+                <span class="step-text">选择座位</span>
+            </div>
+            <div class="step">
+                <span class="step-num">3</span>
+                <div class="bar"></div>
+                <span class="step-text">14分钟内付款</span>
+            </div>
+            <div class="step last">
+                <span class="step-num">4</span>
+                <div class="bar"></div>
+                <span class="step-text">影院取票</span>
+            </div>
+        </div>
+        <div class="main clearfix">
+            <div class="hall">
+                <div class="seat-example">
+                    <div class="selectable-example example">
+                        <img src="../static/image/selectable.jpg" alt="">
+                        <span>可选座位</span>
+                    </div>
+                    <div class="sold-example example">
+                        <img src="../static/image/sold.jpg" alt="">
+                        <span>已售座位</span>
+                    </div>
+                    <div class="selected-example example">
+                        <img src="../static/image/selected.jpg" alt="">
+                        <span>已选座位</span>
+                    </div>
+                </div>
+                <div class="seats-block">
+                    <div class="row-id-container">
+                        <!-- <% for(int i=1;i<=list.i;i++){%>
+                            <span class="row-id">i</span>
+                        <% } %>  -->
+                    </div>
+                    <div class="seats-containter">
+                        <div class="screen-containter" style="left: 0;">
+                            <div class="screen"><img src="../static/image/screen.jpg" alt=""></div>
+                            <div class="screen">银幕中央</div>
+                            <div class="c-screen-line"></div>
+                        </div>
+                        <div class="seats-wrapper" id="seat-map">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="movie-info clearfix">
+                    <div class="poster">
+                        
+                    </div>
+                    <div class="content">
+                        <p class="name text-ellipsis">你的婚礼</p>
+                        <div class="info-item">
+                            <span>类型：</span>
+                            <span class="value type">爱情，剧情</span>
+                        </div>
+                        <div class="info-item">
+                            <span>时长：</span>
+                            <span class="value time">115分钟</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-info">
+                    <div class="info-item">
+                        <span>影院：</span>
+                        <span class="value text-ellipsis cinemaName">香港未来主题影院</span>
+                    </div>
+                    <div class="info-item">
+                        <span>影厅：</span>
+                        <span class="value text-ellipsis hallName">VIP8号城堡厅</span>
+                    </div>
+                    <div class="info-item">
+                        <span>版本：</span>
+                        <span class="value text-ellipsis">中文</span>
+                    </div>
+                    <div class="info-item">
+                        <span>场次：</span>
+                        <span class="value text-ellipsis screen1">周五 4月30 14：10</span>
+                    </div>
+                    <div class="info-item">
+                        <span>票价：</span>
+                        <span class="value text-ellipsis">￥<p class="ticketPrice">34.9</p>/张</span>
+                    </div>
+                </div>
+                <div class="ticket-info">
+                    <!-- <div class="no-ticket" >
+                        <p class="buy-limit">座位：一次最多选4个座位</p>
+                        <p class="no-selected">
+                            请
+                            <span>点击左侧</span>
+                            座位选择图
+                        </p>
+                    </div> -->
+                    <div class="has-ticket">
+                        <span class="text">座位：</span>
+                        <ul class="ticket-containter" id="selected-seats">
+                        </ul>>
+                    </div>
+                    <div class="total-price">
+                        <span>总价：</span>
+                        <span class="price">
+                            ￥<p class="allPrice" id="total">0</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="confirm-order">
+                    <div class="iLoginComp">
+                        <div class="iLoginComp-wrapper">
+                            <!-- <div class="iLoginComp-phone-num-wrapper">
+                                <input class="iLoginComp-phone-num-input" id="phoneNumInput" type="text" maxlength="11" placeholder="输入手机号">
+                            </div>
+                            <div class="iLoginComp-verify-code-wrapper">
+                                <input class="iLoginComp-code-input" id="codeInput" type="text" placeholder="填写验证码">
+                                <div class="iLoginComp-send-verify-code-text" id="sendCodeBtn">获取验证码</div>
+                            </div> -->
+                            <div class="iLoginComp-opbtn-wrapper">
+                                <button class="iLoginComp-cancel-btn-wrapper" id="cancelLogin">
+                                    取消
+                                </button>
+                                <button class="iLoginComp-login-btn-wrapper" id="iloginBtn" data-act="confirm-click"
+                                    data-bid="b_0a0ep6pp" style="display:none;">
+                                    确认选座
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container">
+
+        </div>
+    </div>
+    <div style="height: 50px;"></div>
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a>
+
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            友情链接 :
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+    <script src="../node_modules/jQuery/dist/jquery.js"></script>
+    <script src="../static/js/jquery.seat-charts.min.js"></script>
+    <script>
+        var userJsonStr = sessionStorage.getItem('planInformation');
+        var userEntity = JSON.parse(userJsonStr);
+        console.log(userEntity);
+        var seat = {};
+        var row = 0;
+        var col = 0;
+        // $(".poster img").attr("src") = userEntity.movieHead;
+        $(".content .name").html(userEntity.movieName);
+        $(".content  .type").html(userEntity.movieType);
+        $(".content .time").html(userEntity.movieTime + "分钟");
+        $(".show-info .cinemaName").html(userEntity.cinemaName);
+        $(".show-info .hallName").html(userEntity.hallName);
+        $(".show-info .screen1").html(userEntity.movieStartTime.substr(0, 16));
+        $(".show-info .ticketPrice").html(userEntity.ticketMoney);
+        var imgStr = `<img src="${userEntity.movieHead}" alt="" width="464px" height="644px">`
+        $(".poster").eq(0).append(imgStr)
+        $.ajax({
+            url: `http://localhost:8080/getSeatAndOrder/${userEntity.planId}`,
+            type: 'post',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=UTF-8',
+            success: data => {
+                var maxRowCol = 0;
+                console.log(data);
+                seat = data.seat;
+                // for(var i in data.seat){
+                //     if(i>maxRowCol){
+                //         maxRowCol = i;
+                //     }
+                // }
+                var seatNumber = data.seat.sum;
+                console.log(seatNumber)
+                // console.log(data.seat.sum.split(',')[0])
+                row = Number(seatNumber.split(',')[0]);
+                col = Number(seatNumber.split(',')[1]);
+                console.log(row)
+                console.log(col)
+            }
+        })
+        var movieTicketMovie = {
+            "cinemaId": 1,
+            "cinemaName": "万达影城",
+            "hallName": "激光厅",
+            "movieId": 164,
+            "movieName": "指环王",
+            "movieStartTime": "",
+            "movieTime": 120,
+            "movieType": "剧情",
+            "orderMoney": 35 * 2,
+            "orderStatus": "未支付",
+            "ticketMoney": 35,
+            "userId": 1,
+            "movieHead": "123456"
+        }
+    </script>
+    <script src="../static/js/selectSeat.js"></script>
+    <script>
+        var seatsOrder = [];
+        $("body").on("click", "#iloginBtn", function () {
+            seatsOrder.length = 0;
+            var orderMoney = Number($("#total").html());
+            for (var i = 0; i < $("#selected-seats li").length; i++) {
+                var seat = {
+                    "moviePlanId": Number(userEntity.planId),
+                    "seatColumn": Number($(`#selected-seats li:eq(${i})`).attr("data-col")),
+                    "seatLine": Number($(`#selected-seats li:eq(${i})`).attr("data-row"))
+                }
+                seatsOrder.push(seat);
+            }
+            console.log(seatsOrder)
+            console.log(orderMoney)
+            var str = {
+                "orderMoney": orderMoney,
+                "seatList": seatsOrder
+            }
+            sessionStorage.setItem('seatInformation', JSON.stringify(str));
+            var userJsonStr1 = sessionStorage.getItem('seatInformation');
+            var userEntity1 = JSON.parse(userJsonStr1);
+            console.log(userEntity1);
+            console.log(userEntity);
+            console.log(userEntity.movieStartTime);
+
+
+            var date = new Date(userEntity.movieStartTime);
+            console.log(date)
+            var data = {
+                "cinemaId": Number(userEntity.cinemaId),
+                "cinemaName": userEntity.cinemaName,
+                "hallName": userEntity.hallName,
+                "hallSeatList": userEntity1.seatList
+                    //  [{
+                    //     "moviePlanId": 0,
+                    //     "seatColumn": 0,
+                    //     "seatLine": 0
+                    // } ,{
+
+                    // }],
+                    ,
+                   
+                    "movieHead":"123",
+                "movieId": Number(userEntity.movieId),
+                "movieName": userEntity.movieName,
+                "movieStartTime": date,
+                "movieTime": userEntity.movieTime,
+                "movieType": userEntity.movieType,
+                "orderMoney": userEntity1.orderMoney,
+                "orderStatus": "未支付",
+                "ticketMoney": Number(userEntity.ticketMoney),
+                "planId": Number(userEntity.planId),
+                "userId": 0
+            }
+            console.log(Number(userEntity.movieId))
+            console.log(data)
+            $.ajax({
+                url: `http://localhost:8080/saveOrder/${userEntity.planId}`,
+                type: 'post',
+                dataType: 'json',
+                data: JSON.stringify(data),
+                async: false,
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    console.log("data"+data)
+                    if (data > 0) {
+                        
+                        var str = {
+                        "orderId": data,
+                    }
+                    sessionStorage.setItem('orderIformation', JSON.stringify(str));
+                    window.open("pay.html");
+                    } else {
+                        data=1;
+                        alert("座位已被他人选中，请重新选择！")
+                        $.ajax({
+                            url: `http://localhost:8080/getSeatAndOrder/${userEntity.planId}`,
+                            type: 'post',
+                            dataType: 'json',
+                            async: false,
+                            contentType: 'application/json;charset=UTF-8',
+                            success: data => {
+                                count=0;
+                                var maxRowCol = 0;
+                                console.log(data);
+                                seat = data.seat;
+                                // for(var i in data.seat){
+                                //     if(i>maxRowCol){
+                                //         maxRowCol = i;
+                                //     }
+                                // }
+                                var seatNumber = data.seat.sum;
+                                console.log(seatNumber)
+                                // console.log(data.seat.sum.split(',')[0])
+                                row = Number(seatNumber.split(',')[0]);
+                                col = Number(seatNumber.split(',')[1]);
+                                console.log(row)
+                                console.log(col)
+
+
+                                $(".ticket-containter").empty();
+                                $("#total").html("0")
+                                $(document).ready(function () {
+                                    var $cart = $('#selected-seats'), //座位区
+                                        $counter = $('#counter'), //票数
+                                        $total = $('#total'); //总计金额
+                                    // var row =5 ;
+                                    // var col = 6;
+                                    var map = new Array();
+                                    for (var i = 0; i < row; i++) {
+                                        map[i] = "";
+                                        for (var j = 0; j < col; j++) {
+                                            map[i] += "a";
+                                        }
+                                    }
+                                    console.log(map);
+
+
+                                    var sc = $('#seat-map').seatCharts({
+                                        //座位图
+                                        map: map,
+                                        naming: {
+                                            top: false,
+                                            getLabel: function (
+                                                character, row,
+                                                column) {
+                                                return column;
+                                            }
+                                        },
+                                        legend: { //定义图例
+                                            node: $('#legend'),
+                                            items: [
+                                                ['a', 'available',
+                                                    '可选座'
+                                                ],
+                                                ['a', 'unavailable',
+                                                    '已售出'
+                                                ]
+                                            ]
+                                        },
+                                    });
+
+                                    
+
+                                    //已售出的座位
+                                    var soldSeat = [];
+                                    var ableSeat = [];
+                                    // console.log(seat[1,1])
+                                    // for(var i in seat){
+                                    // 	console.log(seat[i])
+                                    // 	if(seat[i]==0){
+                                    // 		soldSeat.push(i.replace(',', '_'))
+                                    // 	}
+                                    // }
+                                    var value = '';
+                                    Object.keys(seat).forEach(function (key) {
+                                        // console.log(seat[key])
+                                        // value = seat[key].substr(1,seat[key].length-2);
+                                        if (seat[key] == "1") {
+                                            soldSeat.push(key.replace(
+                                                ',', '_'))
+                                        }
+                                        else{
+                                            ableSeat.push(key.replace(
+                                                ',', '_'))
+                                            
+                                        }
+                                    })
+                                    console.log(soldSeat)
+                                    console.log(ableSeat)
+                                    sc.get(soldSeat).status('unavailable');
+                                    sc.get(ableSeat).status('available');
+                                });
+                            }
+                        })
+                    }
+                }
+            })
+
+        })
+
+    </script>
+    <script src="../static/js/selectSeat.js"></script>
+<script src="../static/js/header.js"></script>
+</body>
+
+</html>

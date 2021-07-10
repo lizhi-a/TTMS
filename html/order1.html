@@ -1,0 +1,767 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的界面</title>
+    <link rel="stylesheet" href="../static/css/order-style.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+    <!-- <link rel="stylesheet" href="../static/css/user-style.css"> -->
+</head>
+
+<body>
+    <!-- 头部分开始 -->
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li >
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+    <!-- 头部分结束 -->
+
+    <div class="banner w">
+        <div class="left">
+            <div class="content">
+                <h1>个人中心</h1>
+                <a class="order" >我的订单</a>
+                <!-- <a class="info" >个人信息</a> -->
+            </div>
+        </div>
+        <div class="right" >
+            <div class="title">
+                <h2>我的订单</h2>
+                </div>
+            <div class="right-bg">
+                <h1 id="none" style="color: #f03d37; margin: 40px; "></h1>
+            </div>
+                
+            <div id="test1"></div>
+           
+            
+        </div>
+        <div class="right2" >
+            <div class="title">
+                <h2>基本信息</h2>
+            </div>
+            <div class="user-info">
+                <div class="information">
+                   
+                </div>
+                 <!-- 
+    附加板块
+    内容：管理影厅板块的 新增、编辑影厅弹框html
+   -->
+  <div id="float_box">
+    <form class="layui-form" id="new_hall_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">昵称:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="name" required lay-verify="required" placeholder="请输入昵称" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">生日:</label>
+        <div class="layui-input-inline">
+          <input type="date" name="time" required lay-verify="required"  autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">单选框</label>
+        <div class="layui-input-block">
+          <input type="radio" name="sex" value="男" title="男">
+          <input type="radio" name="sex" value="女" title="女" checked>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">所在城市:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="city" required lay-verify="required" placeholder="请输入所在城市" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">个人简介:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="person" required lay-verify="required" placeholder="请输入个人简介" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block" id="layui-input-block">
+          <button id="new_hall_submit" type="submit" class="layui-btn" lay-submit
+            lay-filter="new_hall_form">立即提交<tton>
+          <button type="reset" class="layui-btn layui-btn-primary">重置<tton>
+          <button type="reset" id="cancel_new_hall" class="layui-btn layui-btn-primary">取消<tton>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+                
+                  <div class="picture">
+                    <img width="100" height="100" src="" id="selected_img" alt="无图片">
+                    <span>修改</span>
+                    <input type="file" id="file" name="file" onchange="previewImage(this)" />
+                  </div> 
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a>
+
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            友情链接 : 
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+            
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+            
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+    
+</body>
+<script src="../node_modules/jQuery/dist/jquery.js"></script>
+<script src="../static/layui/layui.js"></script>
+
+<script>
+    function GetTime(date) {
+    var datee = new Date(date).toJSON();
+    return new Date(+new Date(datee) + 8 * 3600 * 1000).toISOString().
+      replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+    }
+    var page = 0 ;
+    var user = 0;
+    $.ajax({
+        url: `http://localhost:8080/getOrdersBySelf/${user}/1`,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json;charset=UTF-8',
+        success: data =>{
+            console.log(data)
+            page = Number(data[data.length-1].cinemaName) ;
+            console.log(page)
+           
+        },
+            error: function (data) {
+
+            var json = JSON.stringify(data);
+
+            console.log(json);
+            // $('#test1').empty();
+            $("#none").css({"disply":"block"})
+            $("#none").html("暂无订单！")
+            }
+        })
+
+
+        layui.use('laypage', function(){
+        var laypage = layui.laypage;  
+        //执行一个laypage实例
+        laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: page*5 //数据总数，从服务端得到
+            ,limit:5
+            ,theme: '#ef4238'
+            ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            $.ajax({
+        url: `http://localhost:8080/getOrdersBySelf/${user}/${obj.curr}`,
+        type: 'get',
+        dataType: 'json',
+        async:"false",
+        contentType: 'application/json;charset=UTF-8',
+        success: data =>{
+            
+            console.log(data)
+            $(".right-bg").empty()
+            var str = ``;
+            page = Number(data[data.length-1].cinemaName) ;
+            for(var i=0;i<data.length-1;i++){
+                
+                var str2 = ``;
+                for(var j=0;j<data[i].hallSeatList.length;j++){
+                    str2+=`${data[i].hallSeatList[j].seatLine}排${data[i].hallSeatList[j].seatColumn}座 `
+                }
+                var halllist  = ``;
+                for(var j=0;j<data[i].hallSeatList.length;j++){
+                    
+                    if(j==data[i].hallSeatList.length-1){
+                        halllist+=`${data[i].hallSeatList[j].seatLine}，${data[i].hallSeatList[j].seatColumn}`
+                    }
+                    else{
+                        halllist+=`${data[i].hallSeatList[j].seatLine}，${data[i].hallSeatList[j].seatColumn},`
+                    }
+                    // halllist.push({seatLine:data[i].hallSeatList[j].seatLine,seatColumn:data[i].hallSeatList[j].seatColumn})
+                }
+
+                let current_datetime = new Date()
+                let nowTime = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
+                var startTime= GetTime(data[i].movieStartTime)
+                var now = nowTime;
+                var start = startTime;
+                var now1 =now.replace(/\-/g, "/");
+                var start1 =start.replace(/\-/g, "/");
+                var now2 = new Date(now1);
+                // console.log(now2)
+                var start2 = new Date(start1);
+                // console.log(start2)
+                // var different =Math.abs(parseInt(now2 - start2) / 1000 / 60) ;
+                // console.log(different)
+
+                if(data[i].orderStatus=="未支付"){
+                    str+=`<div class="order-form">
+                <div class="order-hd">
+                    <h2>${GetTime(data[i].payTime)}</h2>
+                    <p>猫眼订单号:${data[i].id}</p>
+                    <span class = "delete" style = "cursor: pointer;" data-order = "${Number(data[i].id)}"></span>
+                </div>
+                <div class="order-bd">
+                    <dl><img src="" width="80px" height="120px"></dl>
+                    <dl class="dl-one">
+                        <dd class="one-do">《${data[i].movieName}》</dd>
+                        <dd class="two-do">${data[i].cinemaName} </dd>
+                        <dd class="three-do">${data[i].hallName}  ${str2}</dd>
+                        <dd class="four-do">${GetTime(data[i].movieStartTime).substr(0,16)}</dd>
+                    </dl>
+
+                    <dl class="dl-two">
+                        <dd>${data[i].orderMoney}元</dd>
+                    </dl>
+
+                    <dl class="dl-three">
+                        <dd>${data[i].orderStatus}</dd>
+                    </dl>
+                    <dl class="dl-four">
+                        <dd class="pay" data-cinema = "${Number(data[i].cinemaId)}" data-order = "${Number(data[i].id)}" data-movie = "${Number(data[i].movieId)}" data-orderm="${Number(data[i].orderMoney)}">付款</dd>
+                      
+                    </dl>
+                </div>
+            </div>
+                `
+                }
+                else if(data[i].orderStatus=="退款成功"){
+                    str+=`<div class="order-form">
+                <div class="order-hd">
+                    <h2>${GetTime(data[i].payTime)}</h2>
+                    <p>猫眼订单号:${data[i].id}</p>
+                    <span class = "delete" style = "cursor: pointer;" data-order = "${Number(data[i].id)}"></span>
+                </div>
+                <div class="order-bd">
+                    <dl><img src="" width="80px" height="120px"></dl>
+                    <dl class="dl-one">
+                        <dd class="one-do">《${data[i].movieName}》</dd>
+                        <dd class="two-do">${data[i].cinemaName} </dd>
+                        <dd class="three-do">${data[i].hallName}  ${str2}</dd>
+                        <dd class="four-do">${GetTime(data[i].movieStartTime).substr(0,16)}</dd>
+                    </dl>
+
+                    <dl class="dl-two">
+                        <dd>${data[i].orderMoney}元</dd>
+                    </dl>
+
+                    <dl class="dl-three">
+                        <dd>${data[i].orderStatus}</dd>
+                    </dl>
+                    <dl class="dl-four">
+                        
+                    </dl>
+                </div>
+            </div>
+                `
+                }
+                else if(now2 > start2){
+                    str+=`<div class="order-form">
+                <div class="order-hd">
+                    <h2>${GetTime(data[i].payTime)}</h2>
+                    <p>猫眼订单号:${data[i].id}</p>
+                    <span class = "delete" style = "cursor: pointer;" data-order = "${Number(data[i].id)}"></span>
+                </div>
+                <div class="order-bd">
+                    <dl><img src="" width="80px" height="120px"></dl>
+                    <dl class="dl-one">
+                        <dd class="one-do">《${data[i].movieName}》</dd>
+                        <dd class="two-do">${data[i].cinemaName} </dd>
+                        <dd class="three-do">${data[i].hallName}  ${str2}</dd>
+                        <dd class="four-do">${GetTime(data[i].movieStartTime).substr(0,16)}</dd>
+                    </dl>
+
+                    <dl class="dl-two">
+                        <dd>${data[i].orderMoney}元</dd>
+                    </dl>
+
+                    <dl class="dl-three">
+                        <dd>${data[i].orderStatus}</dd>
+                    </dl>
+                   
+                </div>
+            </div>
+                `
+                }
+                else{
+                    str+=`<div class="order-form">
+                <div class="order-hd">
+                    <h2>${GetTime(data[i].payTime)}</h2>
+                    <p>猫眼订单号:${data[i].id}</p>
+                    <span class = "delete" style = "cursor: pointer;" data-order = "${Number(data[i].id)}"></span>
+                </div>
+                <div class="order-bd">
+                    <dl><img src="" width="80px" height="120px"></dl>
+                    <dl class="dl-one">
+                        <dd class="one-do">《${data[i].movieName}》</dd>
+                        <dd class="two-do">${data[i].cinemaName} </dd>
+                        <dd class="three-do">${data[i].hallName}  ${str2}</dd>
+                        <dd class="four-do">${GetTime(data[i].movieStartTime).substr(0,16)}</dd>
+                    </dl>
+
+                    <dl class="dl-two">
+                        <dd>${data[i].orderMoney}元</dd>
+                    </dl>
+
+                    <dl class="dl-three">
+                        <dd>${data[i].orderStatus}</dd>
+                    </dl>
+                    <dl class="dl-four">
+                        <dd class = "payy"  style="backgronud-color:#e1e1e1;" data-cinema = "${Number(data[i].cinemaId)}" data-order = "${Number(data[i].id)}" data-movie = "${Number(data[i].movieId)}" data-orderm="${Number(data[i].orderMoney)}">已付款</dd>
+                        <dd class="dl-datil" data-time = "${GetTime(data[i].movieStartTime)}" data-seat = "${halllist}" data-plan = "${Number(data[i].planId)}" data-cinema = "${Number(data[i].cinemaId)}" data-order = "${Number(data[i].id)}" data-movie = "${Number(data[i].movieId)}" data-orderm="${Number(data[i].orderMoney)}">退款</dd>
+                    </dl>
+                </div>
+            </div>
+                `
+                }
+                
+                
+            }var parent = $(".right-bg").eq(0);
+                parent.append(str)},
+            
+            error: function (data) {
+
+            var json = JSON.stringify(data);
+
+            console.log(json);
+            // $('#test1').empty();
+            $("#none").css({"disply":"block"})
+            $("#none").html("暂无订单！")
+            }
+            })
+
+            //首次不执行
+            if(!first){
+            //do something
+            }
+        }
+        });
+        });
+        $("body").on("click",".delete",function(){
+            var orderId = Number($(this).attr("data-order")) ;
+            console.log(orderId)
+            $.ajax({
+            url: `http://localhost:8080/delOrdersBySelf/${orderId}`,
+            type: 'delete',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=UTF-8',
+            success: data =>{
+                console.log(data)
+                if(data==1){
+                    $(this).parent().parent().remove();
+                }
+            }
+            })
+        })
+        $("body").on("click",".pay",function(){
+            var cinemaId = $(this).attr("data-cinema");
+            var orderId = $(this).attr("data-order") ;
+            var movieId = $(this).attr("data-movie");
+            var orderMoney = $(this).attr("data-orderm");
+            console.log(cinemaId)
+            console.log(orderId)
+            console.log(movieId)
+            console.log(orderMoney)
+            var data = {
+            "cinemaId": Number(cinemaId),
+            "id":Number(orderId)  ,
+            "movieId": Number(movieId),
+            "orderMoney":Number(orderMoney) 
+        }
+        
+        sessionStorage.setItem('unPayInformation', JSON.stringify(data));
+
+        window.open("cashier.html");
+            
+        })
+        $("body").on("click",".dl-datil",function(){
+            var startTime = $(this).attr("data-time");
+            let current_datetime = new Date()
+            let nowTime = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
+            console.log(nowTime)
+
+            var now = nowTime;
+            var start = startTime;
+            var now1 =now.replace(/\-/g, "/");
+            var start1 =start.replace(/\-/g, "/");
+            var now2 = new Date(now1);
+            console.log(now2)
+            var start2 = new Date(start1);
+            console.log(start2)
+            var different =Math.abs(parseInt(now2 - start2) / 1000 / 60) ;
+            console.log(different)
+            if(different<30){
+                alert("距离开场时间只有30分钟，无法退票！");
+                
+            }
+            else{
+                var cinemaId = $(this).attr("data-cinema");
+                var orderId = $(this).attr("data-order") ;
+                var movieId = $(this).attr("data-movie");
+                var orderMoney = $(this).attr("data-orderm");
+                var planId = $(this).attr("data-plan");
+                var hallList = $(this).attr("data-seat");
+                
+                console.log(cinemaId)
+                console.log(orderId)
+                console.log(movieId)
+                console.log(orderMoney)
+                console.log(hallList)
+                var seatliststr = []
+                seatliststr = hallList.split(",");
+                console.log(seatliststr)
+                var seatlist = []
+                for(var i=0;i<seatliststr.length;i++){
+                    var objs = {
+                        "seatLine":Number(seatliststr[i].substr(0,1)),
+                        "seatColumn":Number(seatliststr[i].substr(2,1)),
+                        "moviePlanId":Number(planId) ,
+                        "orderId":Number(orderId) 
+                    }
+                    seatlist.push(objs)
+                }
+                console.log(seatlist)
+                var data1 = {
+                "cinemaId": Number(cinemaId),
+                "id":Number(orderId)  ,
+                "movieId": Number(movieId),
+                "orderMoney":Number(orderMoney) ,
+                "hallSeatList":seatlist,
+                "planId":Number(planId)
+                }
+                console.log(data1);
+                var f= 0;
+                $.ajax({
+                url: `http://localhost:8080/delOrder`,
+                type: 'delete',
+                dataType: 'json',
+                async: false,
+                data:JSON.stringify(data1),
+                contentType: 'application/json;charset=UTF-8',
+                success: data =>{
+                    console.log(data)
+                    f = 1;
+                    
+                    //     $(this).parent().parent().remove();
+                    // }
+                }
+                })
+                if(f==1){
+                    
+                    $(this).parent(".dl-four").children(".payy").remove();
+                    $(this).parent(".dl-four").parent(".order-bd").children(".dl-three").children("dd").html("退款成功")
+                    $(this).remove()
+                    console.log(1378124)
+                    // if(data==1){
+                }
+            }
+
+            
+        })
+        
+
+        $(".order").on("click",function(){
+            $(".right").css({"display":"block"})
+            $(this).css({"background-color": "#ec443f","color":"white"})
+            $(".info").css({"background-color": "#f4f3f4","color":"black"})
+            $(".right2").css({"display":"none"})
+        })
+
+//         $(".info").on("click",function(){
+//             $(".right2").css({"display":"block"})
+//             $(this).css({"background-color": "#ec443f","color":"white"})
+//             $(".order").css({"background-color": "#f4f3f4","color":"black"})
+//             $(".right").css({"display":"none"})
+//             $.ajax({
+//             url: `http://localhost:8080/getSelf/123@qq.com`,
+//             type: 'get',
+//             dataType: 'json',
+//             async: false,
+//             contentType: 'application/json;charset=UTF-8',
+//             success: data =>{
+//                 console.log(data)
+//                 var str = `<p><span>昵称：</span>${data.nickname}</p>
+//                     <p><span>生日：</span>2001年4月6日</p>
+//                     <p><span>所在城市：</span>${data.city}</p>
+//                     <p><span>性别：</span>${data.gender}</p>
+//                     <p><span>个人简介：</span>${data.personalizedSignature}</p>
+//                     <button>编辑</button>
+//                 `
+//                 var parent = $(".information")
+//                 parent.append(str)
+//             }
+            
+//             })
+        
+        
+//         })
+//         $("body").on("click",".information button",function(){
+//             $("#new_hall_form,#edit_hall_form,#float_box").css({"display":"block"})
+//         })
+//         $("body").on("click","#cancel_new_hall",function(){
+//             $("#new_hall_form,#edit_hall_form,#float_box").css({"display":"none"})
+//         })
+//         $('#new_hall_form').on('submit', e => {
+//   e.preventDefault()
+//   const formData = $('#new_hall_form').serializeArray()
+//   var o = {}
+//   $.each(formData, function () {
+//     if (o[this.name]) {
+//       if (!o[this.name].push) {
+//         o[this.name] = [o[this.name]];
+//       }
+//       o[this.name].push(this.value || '');
+//     } else {
+//       o[this.name] = this.value || '';
+//     }
+//   })
+//   console.log(o)
+  
+//   var obj = {
+//     "city": o.city,
+//     "nickname": o.name,
+//     "personalizedSignature": o.person,
+//     "gender": o.sex,
+//     "birthday":o.time,
+//   }
+//   obj.id = Number(obj.id)
+//   var id = obj.id
+//   obj.seatColumn = Number(obj.seatColumn)
+//   obj.seatLine = Number(obj.seatLine)
+//   obj = JSON.stringify(obj)
+//   console.log(obj)
+
+//   $.ajax({
+//     url: 'http://localhost:8080/editHall',
+//     type: 'put',
+//     data: obj,
+//     dataType: 'json',
+//     catch: false,      //清除上次请求的缓存
+//     contentType: 'application/json;charset=UTF-8',
+//     success: data => {
+//       for (let i = 1; i < parent.children().length; i++) {
+//         let a = parent.children().eq(i)[0]
+//         if (a.childNodes[1].value == id) {
+//           a.childNodes[3].innerHTML = o.hallName
+//           a.childNodes[5].innerHTML = o.movieType
+//           a.childNodes[7].innerHTML = o.seatLine
+//           a.childNodes[9].innerHTML = o.seatColumn
+//         }
+//       }
+
+//       $('#float_box').css({ "display": "none" })
+//       $('#new_hall_form').css({ "display": "none" })
+//       $('#edit_hall_form').css({ "display": "none" })
+//     }
+//   })
+// })
+
+
+        
+
+       
+        
+        
+</script>
+<script>
+    // layui.use('laydate', function(){
+    //   var laydate = layui.laydate;
+      
+    //   //执行一个laydate实例
+    //   laydate.render({
+    //     elem: '#test7' //指定元素
+    //     //,theme: '#ef4238'
+    //   });
+    // });
+    
+    //Demo
+    // layui.use('form', function(){
+    //   var form = layui.form;
+      
+    //   //监听提交
+    //   form.on('submit(formDemo)', function(data){
+    //     layer.msg(JSON.stringify(data.field));
+        // console.log(data.field)
+        // $.ajax({
+        //     url: `http://localhost:8080/editSelf`,
+        //     dataType: 'post',
+        //     async: false,
+        //     data:JSON.stringify(data.field),
+        //     contentType: 'application/json;charset=UTF-8',
+        //     success: data =>{
+        //         console.log(data);
+
+        //     }
+        // })
+    //     return false;
+    //   });
+    // });
+    // function previewImage(file) {
+    //   var img = document.getElementById('imageshow');
+    //   var selected_img = document.getElementById('selected_img');
+    //   var reader = new FileReader();
+    //   reader.onload = function (evt) {
+    //     // img.src = evt.target.result;
+    //     selected_img.src = evt.target.result;
+    //     var dataa = {
+    //         "icon":selected_img.src
+    //     }
+        // $.ajax({
+        //     url: `http://localhost:8080/setPicture/0`,
+        //     dataType: 'post',
+        //     async: false,
+        //     data:JSON.stringify(dataa),
+        //     contentType: 'application/json;charset=UTF-8',
+        //     success: data =>{
+        //         console.log(data);
+
+        //     }
+        // })
+    //   }
+    //   reader.readAsDataURL(file.files[0]);
+    // }
+    </script>
+    
+    <script src="../static/js/header.js"></script>
+</html>   

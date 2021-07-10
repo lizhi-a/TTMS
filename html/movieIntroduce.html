@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影介绍</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+   <link rel="stylesheet" href="../static/css/reset.css">
+   <link rel="stylesheet" href="../static/css/iconfont.css">
+    <link rel="stylesheet" href="../static/css/movieIntroduce.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+    <link rel="stylesheet" href="../static/css/cinemaName.css">
+    <link rel="stylesheet" href="../static/layui/css/layui.css" media="all">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li>
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+    <div class="banner">
+        <div class="imgg">
+            <div class="introduce clearfix">
+                <div class="title">
+                    <h2 class="moviesName"></h2>
+                    <span class="shuoming">
+                        <p class="movieType"> </p><br>
+                        <p class="moviesArea"> </p><br>
+                        <p class="moviesTime"></p>
+                    </span>
+                    <a href="#">
+                        <div class="look iconfont clearfix">&#xe66f;想看</div>
+                    </a>
+                    <a href="#">
+                        <div class="point iconfont clearfix">&#xe68d;评分</div>
+                    </a>
+                    <a href="#">
+                        <div class="more clearfix buyTicket">特惠购票</div>
+                        <div class="more clearfix check">查看更多电影详情</div>
+                    </a>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="aside1">
+                    <span class="title">猫眼口碑</span>
+                    <br>
+                    <div>
+                        <div class="aside1l clearfix moviesScore"></div>
+                        <div class="aside1r">
+                            <span class="tutu iconfont clearfix">&#xe774;&#xe774;&#xe774;&#xe774;&#xe774;</span>
+                            <span class="plun">228.7万人评分</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="aside2">
+                    <span class="pfang">累计票房</span>
+                    <br>
+                    <div>
+                        <div class="tongji clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-content">
+            <div class="tab">
+                <div class="nav">
+                    <a href="#">猫眼电影</a>
+                    >
+                    <a href="#">电影</a>
+                    >
+                    <span class="moviesName"></span>
+                </div>
+                <div class="title">
+                    <div class="title-tro"><a href="#">介绍</a></div>
+                    <div class="title-act"><a href="#">演职人员</a></div>
+                    <div class="title-price"><a href="#">奖项</a></div>
+                    <!-- <div class="title-picture"><a href="#">图集</a></div> -->
+                </div>
+                <div class="jvqing">
+                    <h2 class="jq-title iconfont">&#xe75f;剧情简介</h2>
+                    <span
+                        class="jq-content"></span>
+                </div>
+                <div class="actor">
+                    <div class="actor-title iconfont">&#xe75f;演职人员</div>
+                    <div class="qb"><a href="#">全部></a></div>
+                    <div class="actor-content">
+                        <div class="leader">
+                            <p class="level">导演</p>
+                            <a href="#"><img src="../static/image/1 (1).png" alt=""></a>
+                            <a href="#">
+                                <p class="name">殷若昕</p>
+                            </a>
+                        </div>
+                        <div class="leader">
+                            <p class="level">演员</p>
+                            <a href="#"><img src="../static/image/1 (2).png" alt=""></a>
+                            <a href="#">
+                                <p class="name">张子枫</p>
+                            </a>
+                            <br>
+                            <p id="yan">饰：安然</p>
+
+                        </div>
+                        <div class="leader">
+                            <p class="level"><br></p>
+                            <a href="#"><img src="../static/image/1 (3).png" alt=""></a>
+                            <a href="#">
+                                <p class="name">肖央</p>
+                            </a>
+                            <br>
+                            <p id="yan">饰：武东升</p>
+
+                        </div>
+                        <div class="leader">
+                            <p class="level"><br></p>
+                            <a href="#"><img src="../static/image/1 (4).png" alt=""></a>
+                            <a href="#">
+                                <p class="name">朱媛媛</p>
+                            </a>
+                            <br>
+                            <p id="yan">饰：安蓉蓉</p>
+                        </div>
+                        <div class="leader">
+                            <p class="level"><br></p>
+                            <a href="#"><img src="../static/image/1 (5).png" alt=""></a>
+                            <a href="#">
+                                <p class="name">段博文</p>
+                            </a>
+                            <br>
+                            <p id="yan">饰：钟勇</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="Picture">
+                    <div class="Picture-title iconfont">&#xe75f;图集</div>
+                    <div class="qb"><a href="#">全部></a></div>
+                    <div class="tutu">
+                        <div class="tutu1">
+                            <a href="#"><img src="../static/image/1.jpg" alt="" width="395px" height="319px"></a>
+                        </div>
+                        <div class="tutu2">
+                            <a href="#"><img src="../static/image/2.jpg" alt="" width="158px" height="158px"></a>
+                        </div>
+                        <div class="tutu3">
+                            <a href="#"><img src="../static/image/3.jpg" alt="" width="158px" height="158px"></a>
+                        </div>
+                        <div class="tutu4">
+                            <a href="#"><img src="../static/image/4.jpg" alt="" width="158px" height="158px"></a>
+                        </div>
+                        <div class="tutu5">
+                            <a href="#"><img src="../static/image/5.jpg" alt="" width="158px" height="158px"></a>
+                        </div>
+
+                    </div>
+                </div> -->
+                <div class="pinglun" >
+                    <div class="pl-title iconfont">&#xe75f;热门短评</div>
+                    <div class="btn"><a href="#">写短评</a></div>
+
+                    <div class="pl-content">
+                        <div class="immg"><img src="..atic/image/boy.png" alt=""></div>
+                        <div class="namme">昵称</div>
+                        <div class="pf">
+                            <div class="date">04-02</div>
+                            <span class="iconfont">&#xe774;&#xe774;&#xe774;&#xe774;</span>
+                        </div>
+                        <div class="zan">
+                            <a href="#" class="iconfont">&#xe774;</a>
+                            <div class="shu">12451</div>
+                        </div>
+                        <div class="jtpl">
+                            <span>认真地看了差评，我先针对现有差评反应的东西说几句。 ①影院环境：为什么总有人因为电影院不行就来给电影打低分的，这种行为真的是人间迷惑行为；
+                                ②在电影院玩手机：这绝不是一部敷衍了事用于圈钱的电影，这类电影看不下去只能说不适合当事人，但买票之前就算没看过预告也该看过片名和海报吧，剧情完全是可以预想的，适不适合自己一目了然，非要在影院玩手机然后出来说无聊的人，下次买票还是慎重一点，最好看下预告好在心里对剧情有点数；
+                                ③方言、普通话混用：影片中的语言切换稍加留意就会发觉与现实场景很一致，这也是电影的手法之一。跟长辈对话方言居多，在学校、工作单位、还有与年轻人对话普通话居多，到情绪激动时会用自己最熟悉的语言，都是很自然的事；
+                                ④价值观：电影从来都不是教科书，不是什么都要往正能量、价值观之类的上面说的，何况片中的情境都能见到现实缩影。身为普通人应该不难理解电影中的每一个普通人的选择，至于是对是错每个人心里都有一杆秤，没有人会放弃自己的信念完全按照电影剧情去生活吧？
+                                没写到居然要写不下了。最后简单说下我觉得很好的理由，大小演员表演都比较自然，剧情逻辑正常、贴近现实。拳师饶命，去微博打就好，别到处打。</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="actor1" style="display: none;">
+                    <div class="movie_person">
+                        <!--//职位的大盒子 -->
+                        <div class="person_position">
+                            <!-- //职位名字 -->
+                            <div class="position_name">
+                                导演
+                                <span class="num">(1)</span>
+                            </div>
+                            <ul class="person_list_info">
+                                <!-- <li class="person_list">
+                                    <a href="#" class="photo">
+                                        <img src="../images/doctors.jpg" alt="" width="128px" height="170px">
+                                    </a>
+
+                                    <div class="person_name">
+                                        <a href="#" class="name">沙漠</a>
+                                    </div>
+                                <> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="movie_person">
+                        <!--//职位的大盒子 -->
+                        <div class="person_position">
+                            <!-- //职位名字 -->
+                            <div class="position_name">
+                                演员
+                                <span class="num">(5)</span>
+                            </div>
+                            <ul class="person_list_info">
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        </div>
+    </div>
+    <div class="contents">
+        <div class="part1">
+            <div class="province">
+                <span>省：</span>
+                <ul>
+                    <li>全部</li>
+                    <li data-id="110000">北京市</li>
+                    <li data-id="120000">天津市</li>
+                    <li data-id="130000">河北省</li>
+                    <li data-id="140000">山西省</li>
+                    <li data-id="150000">内蒙古自治区</li>
+                    <li data-id="210000">辽宁省</li>
+                    <li data-id="220000">吉林省</li>
+                    <li data-id="230000">黑龙江省</li>
+                    <li data-id="310000">上海市</li>
+                    <li data-id="320000">江苏省</li>
+                    <li data-id="330000">浙江省</li>
+                    <li data-id="340000">安徽省</li>
+                    <li data-id="350000">福建省</li>
+                    <li data-id="360000">江西省</li>
+                    <li data-id="370000">山东省</li>
+                    <li data-id="410000">河南省</li>
+                    <li data-id="420000">湖北省</li>
+                    <li data-id="430000">湖南省</li>
+                    <li data-id="440000">广东省</li>
+                    <li data-id="450000">广西壮族自治区</li>
+                    <li data-id="460000">海南省</li>
+                    <li data-id="500000">重庆市</li>
+                    <li data-id="510000">四川省</li>
+                    <li data-id="520000">贵州省</li>
+                    <li data-id="530000">云南省</li>
+                    <li data-id="540000">西藏自治区</li>
+                    <li data-id="610000">陕西省</li>
+                    <li data-id="620000">甘肃省</li>
+                    <li data-id="630000">青海省</li>
+                    <li data-id="640000">宁夏回族自治区</li>
+                    <li data-id="650000">新疆维吾尔自治区</li>
+                    <li data-id="710000">台湾省</li>
+                    <li data-id="810000">香港特别行政区</li>
+                    <li data-id="820000">澳门特别行政区</li>
+                </ul>
+            </div>
+            <div class="city">
+                <span>市：</span>
+                <ul>
+                    <li>全部</li>
+                </ul>
+            </div>
+            <div class="district">
+                <span>区：</span>
+                <ul>
+                    <li>全部</li>
+                </ul>
+            </div>
+        </div>
+        <div class="part2">
+            <div>
+                <div class="part2Title">
+                    <h2 class="iconfont clearfix">&#xe75f;影院列表</h2>
+                    <div class="choose clearfix"> <a href="#">筛选></a></div>
+                </div>
+                
+                <ul class="cinema">
+                    
+                </ul>
+
+            </div>
+        </div>
+        <div id="test1"></div>
+    </div>
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a>
+
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            友情链接 : 
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+            
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+            
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+    <script src="../node_modules/jQuery/dist/jquery.js"></script>
+    <script src="../static/layui/layui.js"></script>
+    <script>
+        layui.use('laypage', function(){
+          var laypage = layui.laypage;
+          
+          //执行一个laypage实例
+          laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: 200
+            ,theme: '#ef4238' //数据总数，从服务端得到
+            ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            
+            //首次不执行
+            if(!first){
+              //do something
+            }
+          }
+          });
+        });
+        </script>
+<script>
+    var provinceId = 0;
+    var cityId = 0;
+    var areaId = 0;
+    var page =1;
+    var allpage = 0;
+    var userJsonStr = sessionStorage.getItem('movieInformation');
+    var userEntity = JSON.parse(userJsonStr);
+    console.log(userEntity.id);
+    console.log(userEntity.status);
+    //转为万或亿
+    function tranNumber(num, point) {
+        let numStr = parseInt(num).toString();
+        // 万以内直接返回
+        if (numStr.length < 5) {
+            return numStr;
+        }
+        //大于8位数是亿
+        else if (numStr.length > 8) {
+            let decimal = numStr.substring(numStr.length - 8, numStr.length - 8 + point);
+            return parseFloat(parseInt(num / 100000000) + '.' + decimal)+ '亿' ;
+        }
+        //大于6位数是十万 (以10W分割 10W以下全部显示)
+        else if (numStr.length > 4) {
+            let decimal = numStr.substring(numStr.length - 4, numStr.length - 4 + point);
+            return parseFloat(parseInt(num / 10000) + '.' + decimal) + '万';
+        }
+    }
+    //获取电影信息
+    $.ajax({
+        url:`http://localhost:8080/getSpecificMovie/${userEntity.status}/${userEntity.id}`,
+        type:'get',
+        dataType:'json',
+        success:data=>{
+            console.log(data)
+            var data = data;
+            $(".moviesName").html(data.movieName);
+            $(".moviesType").html(data.movieType);
+            $(".moviesArea").html(`${data.movieArea}/${data.movieMinute}分钟`);
+            $(".moviesTime").html(`${data.movieStart.substring(0,10)} ${data.movieStart.substring(12,16)}中国大陆上映`);
+            $(".moviesScore").html(data.movieScore);
+            $(".jq-content").html(data.movieBrief);
+            $(".tongji").html(tranNumber(data.movieMoney, 2));
+            var html2 = `<img class="moviePicture"  src = "${data.movieHead}" class="clearfix">`
+            $(".imgg").append(html2);
+            $("title").html(`${data.movieName}_购票_剧情介绍_演职人员_图集_猫眼电影`)
+            var str = {
+                "movieName":data.movieName,
+            }
+            sessionStorage.setItem('movieName', JSON.stringify(str));
+            var userJsonStr1 = sessionStorage.getItem('movieName');
+            var userEntity1 = JSON.parse(userJsonStr1);
+            console.log(userEntity1.movieName);
+            var str1 = `<div class="leader">
+                            <p class="level">导演</p>
+                            <a href="#"><img src="${data.directorList[0].directorPicture}" alt="" width="128px" height = "170px"></a>
+                            <a href="#">
+                                <p class="name">${data.directorList[0].directorName}</p>
+                            </a>
+                        </div>
+                       <div class="leader">
+                            <p class="level">演员</p>
+                            <a href="#"><img src="${data.movieActorList[0].actorPicture}" alt="" width="128px" height = "170px"></a>
+                            <a href="#">
+                                <p class="name">${data.movieActorList[0].actorName}</p>
+                            </a>
+                            <br>
+                            <p id="yan">${data.movieActorList[0].roleName}</p>
+
+                        </div>
+
+            `
+            for(var i=1;i<=3;i++){
+                str1+=` <div class="leader">
+                    <p class="level">演员</p>
+                            <a href="#"><img src="${data.movieActorList[i].actorPicture}" alt="" width="128px" height = "170px"></a>
+                            <a href="#">
+                                <p class="name">${data.movieActorList[i].actorName}</p>
+                            </a>
+                            <br>
+                            <p id="yan">${data.movieActorList[i].roleName}</p>
+
+                        </div>
+                `
+            }
+            var parent = $(".actor-content")
+            parent.append(str1)
+
+
+            var str2 = ``
+            for(var i=0;i<data.directorList.length;i++){
+                str2+=`<li class="person_list">
+                                    <a href="#" class="photo">
+                                        <img src="${data.directorList[i].directorPicture}" alt="" width="128px" height="170px">
+                                    </a>
+
+                                    <div class="person_name">
+                                        <a href="#" class="name">${data.directorList[i].directorName}</a>
+                                    </div>
+                                <>
+                `
+            }
+            var parent2 = $(".person_list_info").eq(0)
+            parent2.append(str2)
+            var str3 = ``
+            for(var i=0;i<data.movieActorList.length;i++){
+                str3+=`<li class="person_list">
+                                    <a href="#" class="photo">
+                                        <img src="${data.movieActorList[i].actorPicture}" alt="" width="128px" height="170px">
+                                    </a>
+
+                                    <div class="person_name">
+                                        <a href="#" class="name">${data.movieActorList[i].actorName}</a>
+                                        <span class="actor_name">${data.movieActorList[i].roleName}</span>
+                                    </div>
+                                <>
+                `
+            }
+            var parent3 = $(".person_list_info").eq(1)
+            parent3.append(str3)
+        }
+
+    });
+
+
+
+
+
+
+
+    $(".buyTicket").on("click",function () {
+        $('.header_nav_list li:eq(2)').addClass("first_list");
+        $(".container").css({"display":"none"})
+        $(".contents").css({"display":"block"})
+        $(".buyTicket").css({"display":"none"})
+        $(".check").css({"display":"block"})
+        $.ajax({
+            url: `http://localhost:8080/getCinemas/${userEntity.id}/0`,
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=UTF-8',
+            success: data => {
+                console.log(data)
+                allpage =Number(data[data.length-1].cinemaName) ;
+                console.log(allpage)
+            }
+        })
+
+        layui.use('laypage', function(){
+          var laypage = layui.laypage;
+          
+          //执行一个laypage实例
+          laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: allpage*12
+            ,limit: 12
+            ,theme: '#ef4238' //数据总数，从服务端得到
+            ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            page = obj.curr;
+            console.log(page)
+            $.ajax({
+            url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${userEntity.id}/${page}`,
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json;charset=UTF-8',
+            success: data => {
+                console.log(data)
+                console.log(provinceId)
+                console.log(cityId)
+                console.log(areaId)
+                $('.cinema').empty()
+                var str11 = ``;
+                for(var i = 0;i<data.data.length-1;i++){
+                    if(data.data[i].lawMoney==null||data.data[i].lawMoney==0){
+                        str11+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">暂无参考</span>
+                                <br>
+                            </div>
+                        </div>
+
+                    </li>
+                    `
+                    }
+                    else{
+                        str11+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">￥${data.data[i].lawMoney}元</span><span class="span2">起</span>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ann">
+                            <a href="#" data-id = "${data.data[i].id}"><div class="buy">选座购票</div></a>
+                        </div>
+                    </li>
+                    `
+                    }
+
+                }
+                allpage =Number(data.data[data.data.length-1].cinemaName) ;
+                console.log(allpage)
+                var parent11 = $('.cinema').eq(0);
+                parent11.append(str11);
+            }
+        })
+        
+            //首次不执行
+            if(!first){
+              //do something
+            }
+          }
+          });
+        });
+        
+        $(".province li:first-child").addClass("On");
+        $(".city li:first-child").addClass("On");
+        $(".district li:first-child").addClass("On");
+        $("body").on("click",".province li",function(){
+            $(".province li").removeClass("On");
+            $(this).addClass("On");
+            $(".city").css({"display":"block"});
+            $(".district").css({"display":"none"});
+            if($(this).html()=="全部"){
+                $(".city").css({"display":"none"});
+                provinceId =0
+                cityId = 0
+                areaId = 0
+            }
+            else{
+                provinceId = $(this).attr("data-id");
+                cityId = 0;
+                areaId = 0
+            }  
+            console.log(provinceId)
+        })
+        $("body").on("click",".city li",function(){
+            $(".city li").removeClass("On");
+            $(this).addClass("On");
+            $(".district").css({"display":"block"});
+            if($(this).html()=="全部"){
+                $(".district").css({"display":"none"});
+                provinceId = $(".province .On").attr("data-id");
+                cityId =0;
+                areaId = 0;
+            }else{
+                cityId = $(this).attr("data-id");
+                areaId = 0;
+            }
+            
+            console.log(cityId)
+        })
+        $("body").on("click",".district li",function(){
+            $(".district li").removeClass("On");
+            $(this).addClass("On");
+            if($(this).html()=="全部"){
+                areaId =0
+            }else{
+                areaId = $(this).attr("data-id");
+            }
+            
+            console.log(areaId)
+        })
+        // $("title").html(`${data.movieName}_电影票_特惠购票_低价订票-猫眼电影`)
+
+      
+        var f = 0;
+        $("body").on("click",".part1 li",function () {
+                // if($(this).html()=="全部"&&$(this).parent().parent().attr("class") == "province"){
+                //     f=1;
+                //     console.log(f+"pppp");
+                // }
+                $.ajax({
+                url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${userEntity.id}/0`,
+                type: 'get',
+                dataType: 'json',
+                async: false,
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    allpage =Number(data.data[data.data.length-1].cinemaName) ;
+                    console.log(allpage+"uuu")
+                }
+                })
+
+                $.ajax({
+                url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${userEntity.id}/0`,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    console.log(data)
+
+                    
+                    $('.cinema').empty()
+                    var str1 = ``;
+                    for(var i = 0;i<data.data.length-1;i++){
+                        if(data.data[i].lawMoney==null||data.data[i].lawMoney==0){
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">暂无参考</span>
+                                <br>
+                            </div>
+                        </div>
+
+                    </li>
+                    `
+                        }
+                        else{
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">￥${data.data[i].lawMoney}元</span><span class="span2">起</span>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ann">
+                            <a href="#" data-id = "${data.data[i].id}"><div class="buy">选座购票</div></a>
+                        </div>
+                    </li>
+                    `
+                        }
+                    }
+
+
+                    // if(!jQuery.isEmptyObject(data.local)){
+                        var parent1 = $('.cinema').eq(0);
+                        parent1.append(str1);
+                        if($(this).parent().parent().attr("class") == "province"){
+                            if($(this).html()=="全部"){
+                                console.log(2)
+                            }
+                            else{
+                                $('.city ul').empty()
+                                var strCity = `<li class = "On">全部</li>`;
+                                for(var i = 0;i<data.local.length;i++){
+                                    strCity+=`<li data-id="${data.local[i].id}">${data.local[i].cityName}</li>
+                                    `
+                                }
+                                var parent = $('.city ul');
+                                parent.append(strCity);
+                            }
+                            
+                        }
+                        if($(this).parent().parent().attr("class") == "city"){
+                            $('.district ul').empty()
+                            var strCity = `<li class = "On">全部</li>`;
+                            for(var i = 0;i<data.local.length;i++){
+                                strCity+=`<li data-id="${data.local[i].id}">${data.local[i].areaName}</li>
+                                `
+                            }
+                            var parent = $('.district ul');
+                            parent.append(strCity);
+                        }
+                        
+                    // }
+                    
+                    
+                    
+                    
+                }
+            })
+            
+
+            layui.use('laypage', function(){
+          var laypage = layui.laypage;
+          
+          //执行一个laypage实例
+          laypage.render({
+            elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+            ,count: allpage*12
+            ,limit: 12
+            ,theme: '#ef4238' //数据总数，从服务端得到
+            ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            // console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            // console.log(obj.limit); //得到每页显示的条数
+            page = obj.curr;
+            console.log(allpage)
+            $.ajax({
+                url: `http://localhost:8080/getCinemaByArea/${provinceId}/${cityId}/${areaId}/${userEntity.id}/${page}`,
+                type: 'get',
+                dataType: 'json',
+                contentType: 'application/json;charset=UTF-8',
+                success: data => {
+                    console.log(data)
+                    $('.cinema').empty()
+                    var str1 = ``;
+                    for(var i = 0;i<data.data.length-1;i++){
+                        if(data.data[i].lawMoney==null||data.data[i].lawMoney==0){
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">暂无参考</span>
+                                <br>
+                            </div>
+                        </div>
+
+                    </li>
+                    `
+                        }
+                        else{
+                            str1+=`<li>
+                        <div class="it">
+                            <div class="name">${data.data[i].cinemaName}</div>
+                            <div class="sp">地址：${data.data[i].cinemaAddress}</div>
+                            <div class="btn">
+                                <button>退</button>
+                                <button>改签</button>
+                            </div>
+                        </div>
+                        <div class="itr">
+                            <div class="money">
+                                <span class="span1">￥${data.data[i].lawMoney}元</span><span class="span2">起</span>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="ann">
+                            <a href="#" data-id = "${data.data[i].id}"><div class="buy">选座购票</div></a>
+                        </div>
+                    </li>
+                    `
+                        }
+                    }
+
+
+                    // if(!jQuery.isEmptyObject(data.local)){
+                        var parent1 = $('.cinema').eq(0);
+                        parent1.append(str1);
+                        if($(this).parent().parent().attr("class") == "province"){
+                            if($(this).html()=="全部"){
+                                console.log(2)
+                            }
+                            else{
+                                $('.city ul').empty()
+                                var strCity = `<li class = "On">全部</li>`;
+                                for(var i = 0;i<data.local.length;i++){
+                                    strCity+=`<li data-id="${data.local[i].id}">${data.local[i].cityName}</li>
+                                    `
+                                }
+                                var parent = $('.city ul');
+                                parent.append(strCity);
+                            }
+                            
+                        }
+                        if($(this).parent().parent().attr("class") == "city"){
+                            $('.district ul').empty()
+                            var strCity = `<li class = "On">全部</li>`;
+                            for(var i = 0;i<data.local.length;i++){
+                                strCity+=`<li data-id="${data.local[i].id}">${data.local[i].areaName}</li>
+                                `
+                            }
+                            var parent = $('.district ul');
+                            parent.append(strCity);
+                        }
+                        
+                    // }
+                    
+                    
+                    
+                    
+                }
+            })
+            
+            //首次不执行
+            if(!first){
+              //do something
+            }
+          }
+          });
+        });    
+ 
+            
+        })
+        
+    })
+    $(".check").on("click",function () {
+        $(".container").css({"display":"block"})
+        $(".contents").css({"display":"none"})
+        $(".buyTicket").css({"display":"block"})
+        $(".check").css({"display":"none"})
+        // $("title").html(`${data.movieName}_购票_剧情介绍_演职人员_图集_猫眼电影`)
+    })
+
+    $("body").on("click",".ann a",function(){
+        var cinemaId = $(this).attr("data-id")
+        console.log(cinemaId)
+        var str = {
+            "cinemaId":cinemaId,
+        }
+        sessionStorage.setItem('cinemaInformation', JSON.stringify(str));
+        window.open("movieTime.html");
+    })
+
+    $("body").on("click",".qb ,.title-act a",function(){
+        $(".jvqing").css({"display":"none"})
+        $(".actor").css({"display":"none"})
+        $(".pinglun").css({"display":"none"})
+        $(".actor1").css({"display":"block"})
+        $(".title-act a").css({"color":"#ef4238"})
+        $(".title-tro a").css({"color":"black"})
+    })
+    $("body").on("click",".title-tro a",function(){
+        $(".jvqing").css({"display":"block"})
+        $(".actor").css({"display":"block"})
+        $(".pinglun").css({"display":"block"})
+        $(".actor1").css({"display":"none"})
+        $(".title-tro a").css({"color":"#ef4238"})
+        $(".title-act a").css({"color":"black"})
+    })
+</script>
+
+<script src="../static/js/header.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--  <base href="/">-->
+  <link rel="stylesheet" type="text/css" href="../static/css/movie_hall.css">
+  <link rel="stylesheet" type="text/css" href="../static/js/node_modules/layui/dist/css/layui.css" media="all">
+  <link rel="stylesheet" type="text/css" href="../static/js/node_modules/layui/dist/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/staff.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/movie.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/order_form.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/plan.css">
+  <link rel="stylesheet" href="../static/css/box_office.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"> 管理员系统 </div>
+  <div id="content">
+    <!-- 
+      功能：管理员界面左边的导航栏
+      不需改变
+     -->
+    <div id="left">
+      <ul id="menu">
+        <li class="menu_li staff_list" id="menu_staff">
+          <p>管理员列表</p>
+        </li>
+        <li class="menu_li " id="hall_li">
+          <p>影厅管理</p>
+        </li>
+        <li class="menu_li" id="movie_li">
+          <p>电影管理</p>
+        </li>
+        <li class="menu_li" id="plan_li">
+          <p>排片管理</p>
+        </li>
+        <li class="menu_li" id="order_li">
+          <p>订单管理</p>
+        </li>
+        <li class="menu_li" id="box_officer_li">
+          <p>票房管理</p>
+        </li>
+      </ul>
+    </div>
+    <!-- 
+      功能：点击左侧导航栏右侧内容发生变化
+      需要使用display属性改变对应内容
+     -->
+    <div id="right">
+      <!-- 
+        板块：管理员列表板块
+       -->
+      <div id="right_staff" class="staff_list right_box">
+        <button id="new_staff" class="layui-btn">新增</button>
+        <div class="all_hall all_staff">
+          <div class="hall">
+            <p class="hall_name staff_num">账号</p>
+            <p class="hall_sort staff_psd">密码</p>
+            <p class="hall_sort staff_photo">头像</p>
+            <p class="hall_sort staff_job">职位</p>
+            <p class="hall_operate staff_operator">操作</p>
+          </div>
+          <!-- <form action="" class="hall">
+            <input hidden value="1"></input>
+            <p class="hall_name staff_num hall_p">18729324573</p>
+            <p class="hall_sort staff_psd hall_p">123111111</p>
+            <p class="hall_sort staff_photo hall_p"><img src="../static/image/user.png" alt=""></p>
+            <p class="hall_sort staff_job hall_p">管理员</p>
+            <p class="hall_operate staff_operator">
+              <button type="reset" onclick="edit_staff(this)" class="edit_staff">编辑</button>
+              <button type="reset" class="delete_staff">删除</button>
+            </p>
+          </form>
+          <form action="" class="hall">
+            <input hidden value="2"></input>
+            <p class="hall_name staff_num hall_p">18729324573</p>
+            <p class="hall_sort staff_psd hall_p">123fefvgrfbvr</p>
+            <p class="hall_sort staff_photo hall_p"><img src="../static/image/user.png" alt=""></p>
+            <p class="hall_sort staff_job hall_p">售票员</p>
+            <p class="hall_operate staff_operator">
+              <button type="reset" onclick="edit_staff(this)" class="edit_staff">编辑</button>
+              <button type="reset" class="delete_staff">删除</button>
+            </p>
+          </form> -->
+        </div>
+        <div id="staff_pages"></div>
+      </div>
+      <!-- 
+        板块：影厅管理部分html
+       -->
+      <div id="movie_hall" class="movie_hall right_box">
+        <button id="new_hall" class="layui-btn">新增</button>
+        <div class="all_hall">
+          <div class="hall">
+            <p class="hall_name">影厅名称</p>
+            <p class="hall_sort">影厅类型</p>
+            <p class="hall_line">行数</p>
+            <p class="hall_column">列数</p>
+            <p class="hall_operate">操作</p>
+          </div>
+          <!-- <form action="" class="hall">
+            <input hidden value="${data.id}"></input>
+            <p class="hall_name hall_p">1号厅</p>
+            <p class="hall_sort hall_p">3D巨幕厅</p>
+            <p class="hall_line hall_p">6 排</p>
+            <p class="hall_column hall_p">5 列</p>
+            <p class="hall_operate">
+              <button type="reset" onclick="edit_hall(this)" class="edit_hall">编辑</button>
+              <button type="reset" class="delete_hall">删除</button>
+            </p>
+          </form>
+          <form action="" class="hall">
+            <input hidden value="${data.id}"></input>
+            <p class="hall_name hall_p">2号厅</p>
+            <p class="hall_sort hall_p">3D巨幕厅</p>
+            <p class="hall_line hall_p">6 排</p>
+            <p class="hall_column hall_p">5 列</p>
+            <p class="hall_operate">
+              <button type="reset" onclick="edit_hall(this)" class="edit_hall">编辑</button>
+              <button type="reset" class="delete_hall">删除</button>
+            </p>
+          </form> -->
+        </div>
+        <div id="hall_pages"></div>
+      </div>
+      <!-- 
+        板块：电影管理部分html
+       -->
+      <div id="movie" class="movie_hall right_box">
+        <a id="add_from_library" class="layui-btn" href="./add_movie.html">电影库增加</a>
+        <div class="all_hall" id="movie_content">
+          <!-- <div class="movie_box">
+            <img class="film_img"
+              src="https://p0.meituan.net/movie/69291d617c3dc5dcac5e3bf29dda63ac2200192.jpg@218w_300h_1e_1c" alt="电影图片">
+            <div class="film_intro">
+              <p><span class="film_intro_name">速度与激情</span><span class="film_intro_score"><big>9</big>.0</span></p>
+              <p><span class="film_title">类型：</span><span class="film_sort_detail"> 动作/冒险/犯罪</span></p>
+              <p><span class="film_title">主演：</span><span class="film_actor_detail">范·迪塞尔/米歇尔·罗德里格</span></p>
+              <p><span class="film_title">上映时间：</span><span class="film_time_detail">2021-05-21</span></p>
+              <p class="film_type">正在上映</p>
+            </div>
+          </div> -->
+        </div>
+        <div id="movie_pages"></div>
+      </div>
+      <!-- 
+        板块：排片管理部分html
+       -->
+      <div id="file_schedule" class="movie_hall right_box">
+        <!-- <button id="new_schedule" class="layui-btn">新增</button> -->
+        <div>
+          <input id="movie_search_name" class="order_search" type="text" placeholder="请输入电影名称">
+          <img id="movie_search_icon" src="../static/image/搜索.png" alt="">
+        </div>
+        <div class="all_hall" id="plan_content">
+        </div>
+        <div id="movie_plan_pages"></div>
+      </div>
+      <!-- 
+        板块：订单管理部分html
+       -->
+      <div id="order_form" class="movie_hall right_box">
+        <div>
+          <input class="order_search" id="start_time" type="text" placeholder="开始时间">
+          <input class="order_search" id="end_time" type="text" placeholder="结束时间">
+          <img id="order_search_icon" src="../static/image/搜索.png" alt="">
+        </div>
+        <div class="all_hall">
+          <div class="hall">
+            <p class="hall_name movie_title_name">电影名称</p>
+            <p class="hall_sort movie_title_img">开始时间</p>
+            <p class="hall_line movie_title_video">电影时长</p>
+            <p class="hall_column movie_title_intro">订单总价</p>
+            <p class="hall_column movie_title_sort">影院名称</p>
+            <p class="hall_column movie_title_intro">影厅名称</p>
+          </div>
+        </div>
+        <div id="order_pages"></div>
+      </div>
+      <!-- 
+              板块：票房管理部分html
+             -->
+      <div id="box_office" class="movie_hall right_box">
+        <div class="layui-tab">
+          <ul class="layui-tab-title">
+            <li class="layui-this">电影票房</li>
+            <li>售票员票房</li>
+          </ul>
+          <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+              <div id="box_office_movie">
+              </div>
+              <div id="box_movie_pages"></div>
+            </div>
+            <div class="layui-tab-item">
+              <div id="box_office_seller">
+              </div>
+              <div id="box_seller_pages"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+    附加板块
+    内容：管理员板块的 新增、编辑管理员弹框html
+   -->
+  <div id="float_staff">
+    <form class="layui-form" id="new_staff_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">账号:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="accounts" required lay-verify="required" placeholder="请输入账号" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码：</label>
+        <div class="layui-input-inline">
+          <input type="text" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职位:</label>
+        <div class="layui-input-inline">
+          <input type="radio" name="sellId" value="0" title="管理员" checked>
+          <input type="radio" name="sellId" value="1" title="售票员">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block" style="margin-left:0px;text-align: center;">
+          <button id="new_staff_submit" class="layui-btn" lay-submit lay-filter="new_staff_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_new_staff" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form" id="edit_staff_form" action="">
+      <input id="staff_id" name="id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">账号:</label>
+        <div class="layui-input-inline">
+          <input id="staff_edit_accounts" type="text" name="accounts" required lay-verify="required" placeholder="请输入账号"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码：</label>
+        <div class="layui-input-inline">
+          <input id="staff_edit_psd" type="text" name="password" required lay-verify="required" placeholder="请输入密码"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职位:</label>
+        <div id="staff_edit_job" class="layui-input-inline">
+          <input type="radio" name="sellId" value="0" title="管理员" checked>
+          <input type="radio" name="sellId" value="1" title="售票员">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="edit_staff_submit" class="layui-btn" lay-submit lay-filter="edit_staff_form">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_edit_staff" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 
+    附加板块
+    内容：管理影厅板块的 新增、编辑影厅弹框html
+   -->
+  <div id="float_box">
+    <form class="layui-form" id="new_hall_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">影厅名称:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="hallName" required lay-verify="required" placeholder="请输入影厅名称" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">影厅类型:</label>
+        <div class="layui-input-inline">
+          <select name="movieType">
+            <option value="">请选择一个类型</option>
+            <option value=" 3D厅">3D厅</option>
+            <option value="激光厅">激光厅</option>
+            <option value="长安第一巨幕">长安第一巨幕</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">行数：</label>
+        <div class="layui-input-inline">
+          <input type="text" name="seatLine" required lay-verify="required" placeholder="请输入行数" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">列数:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="seatColumn" required lay-verify="required" placeholder="请输入列数" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_hall_submit" type="submit" class="layui-btn" lay-submit
+            lay-filter="new_hall_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_new_hall" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form" id="edit_hall_form" action="">
+      <input name="id" id="edit_id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">影厅名称:</label>
+        <div class="layui-input-inline">
+          <input id="edit_hallName" type="text" name="hallName" required lay-verify="required" placeholder="请输"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">影厅类型:</label>
+        <div class="layui-input-inline">
+          <select id="edit_movieType" name="movieType" lay-verify="">
+            <option class="select_movieType" value="0">请选择一个类型</option>
+            <option class="select_movieType" value="3D厅">3D厅</option>
+            <option class="select_movieType" value="激光厅">激光厅</option>
+            <option class="select_movieType" value="长安第一巨幕">长安第一巨幕</option>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">行数：</label>
+        <div class="layui-input-inline">
+          <input id="edit_seatLine" type="text" name="seatLine" required lay-verify="required" placeholder="请输入行数"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">列数:</label>
+        <div class="layui-input-inline">
+          <input id="edit_seatColumn" type="text" name="seatColumn" required lay-verify="required" placeholder="请输入列数"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="edit_hall_submit" class="layui-btn" lay-submit lay-filter="edit_hall_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置 </button>
+          <button type="reset" id="cancel_edit_hall" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 
+      附加板块
+      内容：电影板块的 新增、编辑管理员弹框html
+     -->
+  <div id="float_movie">
+    <form class="layui-form" id="new_movie_form" action="">
+      <div class="movie_box">
+        <img class="film_img"
+          src="https://p0.meituan.net/movie/69291d617c3dc5dcac5e3bf29dda63ac2200192.jpg@218w_300h_1e_1c" alt="电影图片">
+        <div class="film_intro add_film_intro">
+          <p><span class="film_intro_name">速度与激情</span><span class="film_intro_score"><big>9</big>.0</span></p>
+          <p><span class="film_title">类型：</span><span class="film_sort_detail"> 动作/冒险/犯罪</span></p>
+          <p><span class="film_title">主演：</span><span class="film_actor_detail">范·迪塞尔/米歇尔·罗德里格</span></p>
+          <p><span class="film_title">上映时间：</span><span class="film_time_detail">2021-05-21</span></p>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_movie_submit" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_new_movie" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form" id="edit_movie_form" action="">
+      <input id="movie_id" name="id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">账号:</label>
+        <div class="layui-input-inline">
+          <input id="movie_edit_accounts" type="text" name="accounts" required lay-verify="required" placeholder="请输入账号"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码：</label>
+        <div class="layui-input-inline">
+          <input id="movie_edit_psd" type="text" name="password" required lay-verify="required" placeholder="请输入密码"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职位:</label>
+        <div id="movie_edit_job" class="layui-input-inline">
+          <input type="radio" name="job" value="1" title="管理员" checked>
+          <input type="radio" name="job" value="2" title="售票员">
+          <input type="radio" name="job" value="3" title="用户">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="edit_movie_submit" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_edit_movie" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 
+        附加板块
+        内容：排片板块的 新增、编辑管理员弹框html
+       -->
+  <div id="float_plan">
+    <form class="layui-form" id="new_plan_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">选择影厅:</label>
+        <div class="layui-input-inline">
+          <select name="" id="new_plan_hall" lay-ignore>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">开始日期</label>
+        <div class="layui-input-inline">
+          <input id="new_plan_start" type="text" name="start_time" required lay-verify="required" placeholder="开始时间"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div id="plan_time">
+        <!-- <div class="plan_time_box">
+          <p class="plan_time_p">18:00-20:00</p>
+          <input class="plan_time_input" type="text" placeholder="请输入该演出计划票价">
+        </div> -->
+      </div>
+      <div class="layui-form-item" style="display: block;margin: 0 auto;">
+        <div class="layui-input-block edit_button">
+          <button id="new_plan_submit" class="layui-btn" lay-submit lay-filter="edit_hall_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置 </button>
+          <button type="reset" id="cancel_new_plan" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form" id="edit_plan_form" action="">
+      <input name="id" id="edit_plan_id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">选择影厅:</label>
+        <div class="layui-input-inline">
+          <select name="" id="plan_edit_hall" lay-ignore>
+          </select>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">开始时间</label>
+        <div class="layui-input-inline">
+          <input id="edit_plan_start" type="text" name="start_time" required lay-verify="required" placeholder="开始时间"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">结束时间：</label>
+        <div class="layui-input-inline">
+          <input id="edit_plan_end" type="text" name="end_time" required lay-verify="required" placeholder="结束时间"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">影票价格:</label>
+        <div class="layui-input-inline">
+          <input id="edit_price" type="text" name="price" required lay-verify="required" placeholder="请输入价格"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block edit_button">
+          <button id="edit_plan_submit" class="layui-btn" lay-submit lay-filter="edit_hall_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置 </button>
+          <button type="reset" id="cancel_edit_plan" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 
+        附加板块
+        内容：订单板块的 新增、编辑订单弹框html
+       -->
+  <div id="float_order">
+    <form class="layui-form" id="new_order_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">电话号码:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="number" required lay-verify="required" placeholder="请输入账号" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">购买票数：</label>
+        <div class="layui-input-inline">
+          <input type="text" name="amount" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">订单金额：</label>
+        <div class="layui-input-inline">
+          <input type="text" name="price" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+            class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_order_submit" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_new_order" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+    <form class="layui-form" id="edit_order_form" action="">
+      <input id="order_id" name="id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">账号:</label>
+        <div class="layui-input-inline">
+          <input id="order_edit_accounts" type="text" name="accounts" required lay-verify="required" placeholder="请输入账号"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">密码：</label>
+        <div class="layui-input-inline">
+          <input id="order_edit_psd" type="text" name="password" required lay-verify="required" placeholder="请输入密码"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">职位:</label>
+        <div id="order_edit_job" class="layui-input-inline">
+          <input type="radio" name="job" value="1" title="管理员" checked>
+          <input type="radio" name="job" value="2" title="售票员">
+          <input type="radio" name="job" value="3" title="用户">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="edit_order_submit" class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_edit_order" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- 
+          附加板块
+          内容：设置最低票价弹框
+         -->
+  <div id="price_pop">
+    <form class="layui-form" id="price_pop_form" action="">
+      <div class="layui-form-item">
+        <label class="layui-form-label">最低票价:</label>
+        <div class="layui-input-inline">
+          <input type="text" name="low_price" required lay-verify="required" placeholder="请设置该电影的最低票价"
+            autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="new_price_pop" class="layui-btn" lay-submit lay-filter="price_pop_form">立即提交</button><button
+            type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_price_pop" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="../static/js/node_modules/jquery/dist/jquery.js"></script>
+  <script src="../static/js/node_modules/layui/dist/layui.js"></script>
+  <script src="../static/js/movie_hall.js"></script>
+  <script src="../static/js/staff.js"></script>
+  <script src="../static/js/movie.js"></script>
+  <script src="../static/js/adminisrator.js"></script>
+  <script src="../static/js/order_form.js"></script>
+  <script src="../static/js/plan.js"></script>
+  <!-- 时间日期选择器 -->
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      laydate.render({
+        elem: '#start_time',
+        type: 'datetime'
+      });
+
+      laydate.render({
+        elem: '#end_time',
+        type: 'datetime'
+      });
+
+      laydate.render({
+        elem: '#edit_plan_start',
+        type: 'time'
+      });
+
+      laydate.render({
+        elem: '#edit_plan_end',
+        type: 'time'
+      });
+
+      laydate.render({
+        elem: '#new_plan_start',
+        type: 'date'
+      });
+      laydate.render({
+        elem: '#new_plan_end',
+        type: 'datetime'
+      });
+    });
+  </script>
+  <!-- 监听提交 -->
+  <script>
+    //Demo
+    layui.use('form', function () {
+      var form = layui.form;
+
+      //监听提交
+      form.on('submit(formDemo)', function (data) {
+        // layer.msg(JSON.stringify(data.field));
+        return false;
+      });
+    });
+
+  </script>
+  <!-- tab选项卡 -->
+  <script>
+    layui.use('element', function () {
+      var element = layui.element;
+
+      //获取hash来切换选项卡，假设当前地址的hash为lay-id对应的值
+      var layid = location.hash.replace(/^#test1=/, '');
+      element.tabChange('test1', layid); //假设当前地址为：http://a.com#test1=222，那么选项卡会自动切换到“发送消息”这一项
+
+      //监听Tab切换，以改变地址hash值
+      element.on('tab(test1)', function () {
+        location.hash = 'test1=' + this.getAttribute('lay-id');
+      });
+    });
+  </script>
+  <!-- 进入就渲染 -->
+  <script>
+    var userJsonStr = sessionStorage.getItem('cinema');
+    userEntity = JSON.parse(userJsonStr);
+    console.log(userEntity.cinemaId);
+    var total_staff_pages = ''
+    $.ajax({
+      url: `http://localhost:8080/getSells/${userEntity.cinemaId}/1`,
+      type: 'get',
+      dataType: 'json',
+      async: false,
+      // contentType: 'application/json;charset=UTF-8',
+      success: data => {
+        console.log('管理员信息', data)
+
+        var str = `
+                <div class="hall">
+                  <p class="hall_name staff_num">账号</p>
+                  <p class="hall_sort staff_psd">密码</p>
+                  <p class="hall_sort staff_photo">头像</p>
+                  <p class="hall_sort staff_job">职位</p>
+                  <p class="hall_operate staff_operator">操作</p>
+                </div>`
+        for (var i = 0; i < data.length - 1; i++) {
+          switch (data[i].sellId) {
+            case 0: data[i].sellId = '管理员'; break;
+            case 1: data[i].sellId = '售票员'; break;
+            default: data[i].sellId = '管理员';
+          }
+
+          str += `
+                  <form action="" class="hall">
+                    <input name="id" value="${data[i].id}" hidden></input>
+                    <p class="hall_name staff_num hall_p">${data[i].accounts}</p>
+                    <p class="hall_sort staff_psd hall_p">******</p>
+                    <p class="hall_sort staff_photo hall_p"><img src="../static/image/user.png" alt=""></p>
+                    <p class="hall_sort staff_job hall_p">${data[i].sellId}</p>
+                    <p class="hall_operate staff_operator">
+                      <button type="reset" onclick="edit_staff(this)" class="edit_staff">编辑</button>
+                      <button type="reset" class="delete_staff">删除</button>
+                    </p>
+                  </form>`
+        }
+
+        var parent = $('.all_hall').eq(0)
+        parent.empty()
+        parent.append(`${str}`)
+        total_staff_pages = (data[data.length - 1].accounts) * 5
+      },
+      error: (e) => {
+        $('.right_box').each(function () {
+          $(this).css("display", "none");
+        })
+
+        var element = $('.right_box')[0];
+        $(element).css("display", "block");
+      }
+    })
+    layui.use('laypage', function () {
+      var laypage = layui.laypage;
+      //执行一个laypage实例
+      laypage.render({
+        elem: 'staff_pages' //注意，这里的 test1 是 ID，不用加 # 号
+        , count: total_staff_pages  //数据总数，从服务端得到
+        , limit: 5
+        , theme: '#4299e1'
+
+        // 当分页被切换时触发，函数返回两个参数：
+        // obj（当前分页的所有选项值）、first（是否首次，一般用于初始加载的判断）
+        , jump: function (obj, first) {
+
+          $.ajax({
+            url: `http://localhost:8080/getSells/${userEntity.cinemaId}/${obj.curr}`,
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            success: data => {
+              // console.log('li返回管理员信息', data)
+              var str = `
+                <div class="hall">
+                  <p class="hall_name staff_num">账号</p>
+                  <p class="hall_sort staff_psd">密码</p>
+                  <p class="hall_sort staff_photo">头像</p>
+                  <p class="hall_sort staff_job">职位</p>
+                  <p class="hall_operate staff_operator">操作</p>
+                </div>`
+              for (var i = 0; i < data.length - 1; i++) {
+                switch (data[i].sellId) {
+                  case 0: data[i].sellId = '管理员'; break;
+                  case 1: data[i].sellId = '售票员'; break;
+                  default: data[i].sellId = '管理员';
+                }
+
+                str += `
+                  <form action="" class="hall">
+                    <input name="id" value="${data[i].id}" hidden></input>
+                    <p class="hall_name staff_num hall_p">${data[i].accounts}</p>
+                    <p class="hall_sort staff_psd hall_p">******</p>
+                    <p class="hall_sort staff_photo hall_p"><img src="../static/image/user.png" alt=""></p>
+                    <p class="hall_sort staff_job hall_p">${data[i].sellId}</p>
+                    <p class="hall_operate staff_operator">
+                      <button type="reset" onclick="edit_staff(this)" class="edit_staff">编辑</button>
+                      <button type="reset" class="delete_staff">删除</button>
+                    </p>
+                  </form>`
+              }
+
+              var parent = $('.all_hall').eq(0)
+              parent.empty()
+              parent.append(`${str}`)
+            }
+          })
+        }
+
+      })
+    })
+  </script>
+</body>
+
+</html>

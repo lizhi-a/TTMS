@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排片时间</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/iconfont.css">
+    <link rel="stylesheet" href="../static/css/movieTime.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul>
+                    <li class="first_list">
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+    <div class="banner">
+        <div class="imgg">
+            
+            <div class="introduce clearfix">
+                <div class="title">
+                    <h2></h2>
+                    <h3></h3>
+                    <span class="shuoming">
+                        <p>电话：029-62358787</p><br>
+                        <p>影院服务</p><br>
+                        <div class="xqing">
+                            <div class="bo">
+                                <div class="boo">改签</div>
+                                <p>未取票用户放映前30分钟可改签</p>
+                            </div>
+                            <div class="bo">
+                                <div class="boo">3D眼睛收费</div>
+                                <p>3D影片请您自备3D眼镜</p>
+                            </div>
+                            <div class="bo">
+                                <div class="boo">儿童优惠</div>
+                                <p>1.3米以下儿童可在家长陪同下免票无座观看普通影片，观看儿童片可享受优惠购票</p>
+                            </div>
+                            <div class="bo">
+                                <div class="boo">WiFi</div>
+                                <p>影院提供免费WIFI</p>
+                            </div>
+                            <div class="bo">
+                                <div class="boo">可停车</div>
+                                <p>楼下有停车位</p>
+                            </div>
+                        </div>
+                    </span>
+
+                </div>
+            </div>
+            <div class="aside">
+                <img src="../static/image/map.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="before">
+            <h2></h2>
+            <span class="like">
+                <span class="num"></span>
+                <span class="ren">人想看</span>
+            </span>
+            <br>
+            <div class="time">
+                <span class="tim">时长：</span>
+                <span class="shu"></span>
+            </div>
+            <div class="time">
+                <span class="tim">类型：</span>
+                <span class="shu"></span>
+            </div>
+            <div class="time">
+                <span class="tim">主演：</span>
+                <span class="shu"></span>
+            </div>
+        </div>
+        <div class="time">
+            <ul class="movieTime">
+                <span class="tim">观影时间：</span>
+            </ul>
+        </div>
+        <div class="main">
+            <table  border="1" cellspacing="0">
+                <tr id="A">
+                    <th>放映时间</th>
+                    <th>语言版本</th>
+                    <th>放映厅</th>
+                    <th>售价（元）</th>
+                    <th>选座购票</th>
+                <!-- </tr>
+                <tr>
+                    <td>
+                        <span class="start">14:10</span>
+
+                        <span class="end">16:05散场</span>
+                    </td>
+                    <td>国语2D</td>
+                    <td>VIP8号城堡厅（若3D影片请自备3D眼镜）</td>
+                    <td class="money">￥34.9</td>
+                    <td>
+                        <input class="btn" type="button" value="选座购票">
+                    </td>
+                </tr>
+                <tr id="A">
+                    <td>
+                        <span class="start">14:10</span>
+
+                        <span class="end">16:05散场</span>
+                    </td>
+                    <td>国语2D</td>
+                    <td>VIP8号城堡厅（若3D影片请自备3D眼镜）</td>
+                    <td class="money">￥34.9</td>
+                    <td>
+                        <input class="btn" type="button" value="选座购票">
+                    </td>
+                </tr> -->
+                
+                
+
+            </table>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a>
+
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            友情链接 : 
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+            
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+            
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+    
+</body>
+<script src="../node_modules/jQuery/dist/jquery.js"></script>
+<script>
+    function GetTime(date) {
+    var datee = new Date(date).toJSON();
+    return new Date(+new Date(datee) + 8 * 3600 * 1000).toISOString().
+      replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+    }
+    function formatDate(date) {
+    var myyear = date.getFullYear();
+    var mymonth = date.getMonth() + 1;
+    var myweekday = date.getDate();
+ 
+    if (mymonth < 10) {
+        mymonth = "0" + mymonth;
+    }
+    if (myweekday < 10) {
+        myweekday = "0" + myweekday;
+    }
+    return (myyear + "-" + mymonth + "-" + myweekday);
+}
+
+    if(sessionStorage.getItem('allcinemaInformation')) {
+        console.log(112)
+        var userJsonStr = sessionStorage.getItem('allcinemaInformation');
+        var userEntity = JSON.parse(userJsonStr);
+        $.ajax({
+        url: `http://localhost:8080/getPlanAndCinema/${Number(userEntity.movieId) }/${ Number(userEntity.cinemaId) }`,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json;charset=UTF-8',
+        success: data =>{
+            console.log(data)
+            $(".title h2").html(data.cinema.cinemaName);
+            $(".title h3").html(data.cinema.cinemaAddress);
+            $(".shuoming p:first").html(data.cinema.cinemaNumber);
+            var pic =`<img src="" alt="" class="clearfix" width="307px" height="307px">` //${data.cinema.cinemaPicture}
+            var parent = $('.imgg');
+            parent.append(pic);
+            $(".before h2").html(data.movie.movieName);
+            $(".num").html(data.movie.wantLook);
+            $(".shu:first").html(data.movie.movieMinute);
+            $('.shu:eq(1)').html(data.movie.movieType);
+            head = data.movie.movieHead;
+            var actor = ``
+            for(var i = 0;i<3;i++){
+                actor+=`${data.movie.movieActorList[i].actorName} `
+            }
+            $('.shu:eq(2)').html(actor);
+
+            plan = data.plan
+            console.log(plan)
+
+            var timeKey = []
+            timeKey = Object.keys(plan);
+            console.log(timeKey)
+
+            var time1 = ``;
+            for(var i=timeKey.length-1;i>=0;i--){
+                time1+=`<li data-id="${GetTime(timeKey[i])}">${GetTime(timeKey[i]).substr(5,2)}月${GetTime(timeKey[i]).substr(8,2)}日</li>`
+            }
+            var parent = $('.time ul');
+            parent.append(time1);
+
+            
+            nowPlan=plan[timeKey[timeKey.length-1]]
+            
+            var planTime = ``;
+            console.log(nowPlan)
+            for(var i=0;i<nowPlan.length;i++){
+                planTime += `<tr>
+                    <td>
+                        <span class="start">${GetTime(nowPlan[i].movieStartTime).substr(11,5)}</span>
+
+                        <span class="end">${GetTime(nowPlan[i].movieEndTime).substr(11,5)}散场</span>
+                    </td>
+                    <td>中文</td>
+                    <td>${nowPlan[i].hall.hallName}</td>
+                    <td class="money" data-money = "${nowPlan[i].ticketMoney}">￥${nowPlan[i].ticketMoney}</td>
+                    <td>
+                        <input movie-id="${nowPlan[i].movie.id}" plan-id = "${nowPlan[i].id}" data-id="${GetTime(nowPlan[i].movieStartTime)}" class="btn" type="button" value="选座购票">
+                    </td>
+                </tr>`;
+            }
+            
+                var parent1 = $('.main table');
+                parent1.append(planTime);
+        }
+        
+    })
+ 
+    }
+
+    else{
+        var userJsonStr = sessionStorage.getItem('cinemaInformation');
+    var userEntity = JSON.parse(userJsonStr);
+    console.log(userEntity.cinemaId);
+    var userJsonStr1 = sessionStorage.getItem('movieInformation');
+    var userEntity1 = JSON.parse(userJsonStr1);
+    console.log(userEntity1.id);
+
+    var head ='';
+    // console.log(userEntity.status);
+    var plan;
+
+    $.ajax({
+        url: `http://localhost:8080/getPlanAndCinema/${userEntity1.id}/${userEntity.cinemaId}`,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        contentType: 'application/json;charset=UTF-8',
+        success: data =>{
+            console.log(data)
+            $(".title h2").html(data.cinema.cinemaName);
+            $(".title h3").html(data.cinema.cinemaAddress);
+            $(".shuoming p:first").html(data.cinema.cinemaNumber);
+            var pic =`<img src="" alt="" class="clearfix" width="307px" height="307px">` //${data.cinema.cinemaPicture}
+            var parent = $('.imgg');
+            parent.append(pic);
+            $(".before h2").html(data.movie.movieName);
+            $(".num").html(data.movie.wantLook);
+            $(".shu:first").html(data.movie.movieMinute);
+            $('.shu:eq(1)').html(data.movie.movieType);
+            head = data.movie.movieHead;
+            var actor = ``
+            for(var i = 0;i<3;i++){
+                actor+=`${data.movie.movieActorList[i].actorName} `
+            }
+            $('.shu:eq(2)').html(actor);
+
+            plan = data.plan
+            console.log(plan)
+
+            var timeKey = []
+            timeKey = Object.keys(plan);
+            console.log(timeKey)
+
+            var time1 = ``;
+            for(var i=timeKey.length-1;i>=0;i--){
+                time1+=`<li data-id="${GetTime(timeKey[i])}">${GetTime(timeKey[i]).substr(5,2)}月${GetTime(timeKey[i]).substr(8,2)}日</li>`
+            }
+            var parent = $('.time ul');
+            parent.append(time1);
+
+            
+            nowPlan=plan[timeKey[timeKey.length-1]]
+            
+            var planTime = ``;
+            console.log(nowPlan)
+            for(var i=0;i<nowPlan.length;i++){
+                planTime += `<tr>
+                    <td>
+                        <span class="start">${GetTime(nowPlan[i].movieStartTime).substr(11,5)}</span>
+
+                        <span class="end">${GetTime(nowPlan[i].movieEndTime).substr(11,5)}散场</span>
+                    </td>
+                    <td>中文</td>
+                    <td>${nowPlan[i].hall.hallName}</td>
+                    <td class="money" data-money = "${nowPlan[i].ticketMoney}">￥${nowPlan[i].ticketMoney}</td>
+                    <td>
+                        <input movie-id="${nowPlan[i].movie.id}" plan-id = "${nowPlan[i].id}" data-id="${GetTime(nowPlan[i].movieStartTime)}" class="btn" type="button" value="选座购票">
+                    </td>
+                </tr>`;
+            }
+            
+                var parent1 = $('.main table');
+                parent1.append(planTime);
+        }
+        
+    })
+    }
+
+
+
+    
+    
+    $(".movieTime li:first").addClass("On");
+    var nowPlan;
+    $("body").on("click",".movieTime li",function(){
+        $(".movieTime li").removeClass("On");
+        $(this).addClass("On");
+        for(var i in plan){
+            var planTime = ``;
+            if($(this).attr("data-id")==i){
+                console.log(i)
+                nowPlan = plan[i]
+                console.log(nowPlan)
+                for(var i=0;i<nowPlan.length;i++){
+                    $('.main table').empty()
+                    planTime += `<tr>
+                    <td>
+                        <span class="start">${GetTime(nowPlan[i].movieStartTime).substr(11,5)}</span>
+
+                        <span class="end">${GetTime(nowPlan[i].movieEndTime).substr(11,5)}散场</span>
+                    </td>
+                    <td>中文</td>
+                    <td class = "hallName" data-hallName = "${nowPlan[i].hall.hallName}">${nowPlan[i].hall.hallName}</td>
+                    <td class="money" data-money = "${nowPlan[i].ticketMoney}">￥${nowPlan[i].ticketMoney}</td>
+                    <td>
+                        <input movie-id="${nowPlan[i].movie.id}"  plan-id = "${nowPlan[i].id}" data-id="${GetTime(nowPlan[i].movieStartTime)}" class="btn" type="button" value="选座购票">
+                    </td>
+                </tr>`;
+  
+                }
+                var parent = $('.main table');
+                parent.append(planTime);
+            }
+        }
+        
+    })
+    
+    $("body").on("click",".main .btn",function(){
+        let current_datetime = new Date()
+        let nowTime = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
+        console.log(nowTime)
+        var startTime = $(this).attr("data-id");
+        console.log(startTime)
+        var now = nowTime;
+        var start = startTime;
+        var now1 =now.replace(/\-/g, "/");
+        var start1 =start.replace(/\-/g, "/");
+        var now2 = new Date(now1);
+        console.log(now2)
+        var start2 = new Date(start1);
+        console.log(start2)
+        var different =Math.abs(parseInt(now2 - start2) / 1000 / 60) ;
+        console.log(different)
+        if(different<5){
+            alert("距离开场时间只有5分钟，无法购票");
+        }
+        var planId = $(this).attr("plan-id")
+        console.log(planId)
+        var movieTicketMovie = 
+        {
+            "planId":planId,
+            "cinemaId": userEntity.cinemaId,
+            "cinemaName": $(".title h2").html(),
+            "hallName": $(this).parent().parent().children("td").eq(2).html(),
+            "movieId": $(this).attr("movie-id"),
+            "movieName": $(".before h2").html(),
+            "movieStartTime":$(this).attr("data-id"),
+            "movieTime": $(".shu:first").html(),
+            "movieType": $('.shu:eq(1)').html(),
+            "movieHead":String(head),
+            "orderMoney": "",
+            "orderStatus": "1",
+            "ticketMoney":  $(this).parent().parent().children("td").eq(3).attr("data-money"),
+            "userId": 1,
+            
+        }
+        console.log(movieTicketMovie)
+        sessionStorage.setItem('planInformation', JSON.stringify(movieTicketMovie));
+        window.open("selectSeat.html");
+    })
+
+</script>
+
+<script src="../static/js/header.js"></script>
+</html>

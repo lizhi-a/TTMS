@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热映口碑榜</title>
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/shorcut.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li>
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li class="first_list">
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+
+    <div class="banner">
+        <ul class="nav">
+            <li>
+                <a class="one">热映口碑榜</a>
+            </li>
+            <li>
+                <a class="two">最受期待榜</a>
+            </li>
+            <li>
+                <a class="three">国内票房榜</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="body w">
+        <p>
+            2021-06-10
+            <span>已更新</span>
+        </p>
+        <p class="content">
+               </p>
+    </div>
+
+    <div class="datil w ">
+        <dl id="main">
+            <!-- <dd class="list">
+                <i class="movie_number_top">
+                    <img src="../static/image/Num.png" alt="">
+                </i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_1.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+
+
+            </dd>
+            <dd class="list">
+                <i class="movie_number">2</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number">3</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">4</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">5</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">6</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">7</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">8</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">9</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd>
+
+            <dd class="list">
+                <i class="movie_number_normal">10</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="../static/image/movie_2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">金刚川</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：张译,吴京,李九霄
+                        </p>
+                        <p class="releasetime">
+                            上映时间：2020-10-23
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">9.</i>
+                        <i class="fraction">5</i>
+                    </div>
+                </div>
+            </dd> -->
+        </dl>
+    </div>
+
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a>
+
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+            友情链接 : 
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+            
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+            
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+<script src="../node_modules/jQuery/dist/jquery.js" ></script>
+<script>
+    function tranNumber(num, point) {
+        let numStr = parseInt(num).toString();
+        // 万以内直接返回
+        if (numStr.length < 5) {
+            return numStr;
+        }
+        //大于8位数是亿
+        else if (numStr.length > 8) {
+            let decimal = numStr.substring(numStr.length - 8, numStr.length - 8 + point);
+            return parseFloat(parseInt(num / 100000000) + '.' + decimal )+ '亿' ;
+        }
+        //大于6位数是十万 (以10W分割 10W以下全部显示)
+        else if (numStr.length > 4) {
+            let decimal = numStr.substring(numStr.length - 4, numStr.length - 4 + point);
+            return parseFloat(parseInt(num / 10000) + '.' + decimal )+ '万' ;
+        }
+    }
+    function GetTime(date) {
+    var datee = new Date(date).toJSON();
+    return new Date(+new Date(datee) + 8 * 3600 * 1000).toISOString().
+      replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '')
+    }
+    $(".one").css({"color":"#ef4238"})
+    var actor000 = "奥马尔·本·哈依德 刘德华 易烊千玺";
+    $.ajax({
+        url: 'http://localhost:8080/ByScoreByOnAndHotPage/0',
+        type: 'get',
+        dataType: 'json',
+        contentType: 'application/json;charset=UTF-8',
+        success: data =>{
+            console.log(data)
+            var actor1 = ``;
+            for(var i=0;i<3;i++){
+                actor1+=` ${data[0].movieActorList[i].actorName}`
+            }
+            var str = `<dd class="list">
+                <i class="movie_number_top">
+                    <img src="../static/image/Num.png" alt="" >
+                </i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[0].movieHead}" alt="" width ="160px" height = "220px">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[0].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor1}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[0].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">${data[0].movieScore}</i>
+                        
+                    </div>
+                </div>
+
+
+            </dd>`;
+            for(var i =1;i<10;i++){
+                var actor = ``;
+                if(data[i].movieActorList!=null){
+                    for(var j=0;j<3;j++){
+                        actor+=` ${data[i].movieActorList[j].actorName}`
+                }
+                }
+                    else{
+                        actor+=actor000;
+                    }
+
+                
+
+                str+=`<dd class="list">
+                <i class="movie_number">${i+1}</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[i].movieHead}" alt="" width ="160px" height = "220px"> 
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[i].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[i].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">${data[i].movieScore}</i>
+                        
+                    </div>
+                </div>
+            </dd>
+
+                `
+            }
+            var parent = $("#main");
+            parent.append(str);
+
+        }
+    })
+    var dataa={};
+    $("body").on("click",".nav  a",function(){
+
+        $(".nav  a").css({"color":"#999"})
+        $(this).css({"color":"#ef4238"})
+        if($(this).attr("class")=="one"){
+            $.ajax({
+            url: 'http://localhost:8080/ByScoreByOnAndHotPage/0',
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json;charset=UTF-8',
+            success: data =>{
+                console.log(data)
+                $("#main").empty()
+                var actor1 = ``;
+            for(var i=0;i<3;i++){
+                actor1+=` ${data[0].movieActorList[i].actorName}`
+            }
+            var str = `<dd class="list">
+                <i class="movie_number_top">
+                    <img src="../static/image/Num.png" alt="" >
+                </i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[0].movieHead}" alt="" width ="160px" height = "220px">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[0].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor1}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[0].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">${data[0].movieScore}</i>
+                    </div>
+                </div>
+
+
+            </dd>`;
+            for(var i =1;i<10;i++){
+                var actor = ``
+                if(data[i].movieActorList.length<3){
+                    actor+=actor000;
+                }
+                else{
+                    for(var j=0;j<3;j++){
+                    actor+=` ${data[i].movieActorList[j].actorName}`
+                }
+                }
+
+                str+=`<dd class="list">
+                <i class="movie_number">${i+1}</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[i].movieHead}" alt="" width ="160px" height = "220px"> 
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[i].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[i].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">${data[i].movieScore}</i>
+                    </div>
+                </div>
+            </dd>
+
+                `
+            }
+            var parent = $("#main");
+            parent.append(str);
+            }
+        })
+        }
+        else if($(this).attr("class")=="two"){
+            $.ajax({
+            url: 'http://localhost:8080/ByLikesPage/0',
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json;charset=UTF-8',
+            success: data =>{
+                console.log(data)
+                $("#main").empty()
+                var actor1 = ``;
+            for(var i=0;i<3;i++){
+                actor1+=` ${data[0].movieActorList[i].actorName}`
+            }
+            var str = `<dd class="list">
+                <i class="movie_number_top">
+                    <img src="../static/image/Num.png" alt="" >
+                </i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[0].movieHead}" alt="" width ="160px" height = "220px">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[0].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor1}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[0].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">${data[0].wantLook}</i>
+                    </div>
+                </div>
+
+
+            </dd>`;
+            for(var i =1;i<10;i++){
+                var actor = ``
+                if(data[i].movieActorList.length<3){
+                    actor+=actor000;
+                }
+                else{
+                    for(var j=0;j<3;j++){
+                    actor+=` ${data[i].movieActorList[j].actorName}`
+                }
+                }
+
+                str+=`<dd class="list">
+                <i class="movie_number">${i+1}</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[i].movieHead}" alt="" width ="160px" height = "220px"> 
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[i].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[i].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="inreger">${data[i].wantLook}</i>
+                    </div>
+                </div>
+            </dd>
+
+                `
+            }
+            var parent = $("#main");
+            parent.append(str);
+            }
+        })
+        }
+        else if($(this).attr("class")=="three"){
+            $.ajax({
+            url: 'http://localhost:8080/ByDayMoney/0',
+            type: 'get',
+            dataType: 'json',
+            contentType: 'application/json;charset=UTF-8',
+            success: data =>{
+                console.log(data)
+                $("#main").empty()
+                var actor1 = ``;
+            for(var i=0;i<3;i++){
+                actor1+=` ${data[0].movieActorList[i].actorName}`
+            }
+            var str = `<dd class="list">
+                <i class="movie_number_top">
+                    <img src="../static/image/Num.png" alt="" >
+                </i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[0].movieHead}" alt="" width ="160px" height = "220px">
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[0].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor1}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[0].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="fraction">${tranNumber(data[0].dayMoney) }</i>
+                    </div>
+                </div>
+
+
+            </dd>`;
+            for(var i =1;i<10;i++){
+                var actor  = ``
+                if(data[i].movieActorList.length<3){
+                    actor+=actor000;
+                }
+                else{
+                    for(var j=0;j<3;j++){
+                    actor+=` ${data[i].movieActorList[j].actorName}`
+                }
+                }
+
+                str+=`<dd class="list">
+                <i class="movie_number">${i+1}</i>
+                <div class="photo">
+                    <a href="#" class="image_link">
+                        <img src="${data[i].movieHead}" alt="" width ="160px" height = "220px"> 
+                    </a>
+                </div>
+                <div class="movie_content">
+                    <div class="movie_info">
+                        <p class="movie_name">
+                            <a href="#">${data[i].movieName}</a>
+                        </p>
+                        <p class="movie_star">
+                            主演：${actor}
+                        </p>
+                        <p class="releasetime">
+                            上映时间：${GetTime(data[i].movieStart).substr(0,10)}
+                        </p>
+                    </div>
+
+                    <div class="movie_score">
+                        <i class="fraction">${tranNumber(data[i].dayMoney) }</i>
+                    </div>
+                </div>
+            </dd>
+
+                `
+            }
+            var parent = $("#main");
+            parent.append(str);
+            }
+        })
+        }
+        
+        
+
+    })
+</script>
+
+<script src="../static/js/header.js"></script>
+</html>

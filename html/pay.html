@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付界面</title>
+    <link rel="stylesheet" href="../static/css/pay.css">
+    <link rel="stylesheet" href="../static/css/header.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="shortcut icon" href="../static/image/head.ico">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_conent header">
+            <div class="header_logo">
+                <a href="#">
+                    <img src="../static/image/logo.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="header_nav">
+                <ul class="header_nav_list">
+                    <li >
+                        <a href="#" id="index">首页</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allMovie">电影</a>
+                    </li>
+                    <li>
+                        <a href="#" id="allCinema">影院</a>
+                    </li>
+                   
+                    <li>
+                        <a href="#" id="top10">榜单</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="App_download">
+                <a href="#">
+                    <div class="phone_img">
+                        <img src="../images/phone.png" alt="">
+                    </div>
+                    <div class="phone_content">App下载</div>
+                    <span class="caret1"></span>
+                    <div class="download_icon">
+                        <p class="down_title">扫码下载APP</p>
+                        <p class="down_content">选座更优惠</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="header_search">
+                <form action="" id="searchS">
+                    <select name="type" id="select">
+                        <option value="movieName">电影名</option>
+                        <option value="cinameName">影院名</option>
+                    </select>
+                    <input type="search" name="text"  class="search">
+                    <button type="submit" class="submit">
+                </form>
+                
+            </div>
+
+            <div class="user_login">
+                <a href="#">
+                    <img src="../static/image/user.png" alt="">
+                    <span class="caret caret1"></span>
+                    <div class="user_login_menu">
+                        <a class="login" href="#">登录</a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div> 
+    <div class="header_placeholder"></div>
+    <div class="pay_box">
+        <div class="order_process">
+            <div class="step_first">
+                <span class="step_num">1</span>
+                <div class="bar"></div>
+                <span class="step_texr">选择影片场次</span>
+            </div>
+
+            <div class="step_first step_second">
+                <span class="step_num">2</span>
+                <div class="bar"></div>
+                <span class="step_texr">选择座位</span>
+            </div>
+
+            <div class="step_first step_second">
+                <span class="step_num">3</span>
+                <div class="bar"></div>
+                <span class="step_texr">14分钟内付款</span>
+            </div>
+
+            <div class="step_last step_first">
+                <span class="step_num">4</span>
+                <div class="bar"></div>
+                <span class="step_texr">影院取票观影</span>
+            </div>
+        </div>
+
+        <div class="count_down_wrapper">
+            <div class="count_down">
+                <p class="time_left" id="timer">
+                    请在
+                    <span class="minute">0</span> 分钟
+                    <span class="second">0</span> 秒内完成支付
+                </p>
+
+                <p class="tip">超时订单会自动取消,如遇支付问题,请致电542客服：3524-3524</p>
+            </div>
+        </div>
+
+        <p class="warning">
+            请仔细核对场次信息，出票后将
+            <span class="attention">无法退票或改签</span>
+        </p>
+
+        <table class="order_table">
+            <thead>
+                <tr>
+                    <th>影片</th>
+                    <th>时间</th>
+                    <th>影院</th>
+                    <th>座位</th>
+                </tr>
+            </thead>
+
+        </table>
+
+        <div class="right">
+            <div class="price_wrapper">
+                <span>实际支付:</span>
+                <span class="price">￥35</span>
+            </div>
+
+            <div>
+                <div class="pay_btn"><a href="cashier.html">确认支付</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="first_links">
+            关于猫眼 :
+            <a href="#">关于我们</a>
+            <span></span>
+            <a href="#">管理团队</a>
+            <span></span>
+            <a href="#">投资者团队</a> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 友情链接 :
+            <a href="#">美团网</a>
+            <span></span>
+            <a href="#">格瓦拉</a>
+            <span></span>
+            <a href="#">美团下载</a>
+            <span></span>
+            <a href="#">欢喜首映</a>
+
+        </p>
+        <p>
+            商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900
+        </p>
+        <p>
+            用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com
+        </p>
+        <p>
+            <a href="#">中华人民共和国增值电信业务经营许可证 京B2-20190350</a>
+            <span></span>
+            <a href="#">营业性演出许可证 京演（机构）（2019）4094号</a>
+        </p>
+        <p>
+            <a href="#">广播电视节目制作经营许可证 （京）字第08478号</a>
+            <span></span>
+            <a href="#">网络文化经营许可证 京网文（2019）3837-369号 </a>
+
+        </p>
+        <p>
+            <a href="#">猫眼用户服务协议 </a>
+            <span></span>
+            <a href="#">猫眼平台交易规则总则 </a>
+            <span></span>
+            <a href="#">隐私政策 </a>
+        </p>
+
+        <p>
+            <a href="#">京公网安备11010102003232号</a>
+            <span></span>
+            <a href="#">京ICP备16022489号-1</a>
+        </p>
+        <p>
+            北京猫眼文化传媒有限公司
+        </p>
+        <p>
+            猫眼电影 maoyan.com
+        </p>
+        <div class="certificate">
+            <a href="#">
+                <img src="../static/image/footer1.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer2.png" alt="">
+            </a>
+
+            <a href="#">
+                <img src="../static/image/footer3.png" alt="">
+            </a>
+        </div>
+    </div>
+    <script src="../node_modules/jQuery/dist/jquery.js"></script>
+    <script>
+        var userJsonStr = sessionStorage.getItem('planInformation');
+        var userEntity = JSON.parse(userJsonStr);
+
+        var userJsonStr1 = sessionStorage.getItem('seatInformation');
+        var userEntity1 = JSON.parse(userJsonStr1);
+
+        var userJsonStr2 = sessionStorage.getItem('orderIformation');
+        var userEntity2 = JSON.parse(userJsonStr2);
+        console.log(userEntity2.orderId);
+        console.log(userEntity1);
+        console.log(userEntity);
+
+
+        var str = ``;
+        for (var i = 0; i < userEntity1.seatList.length; i++) {
+            str += ` <tbody>
+                <td class="movie_name">《${userEntity.movieName}》</td>
+                <td class="showtime">${userEntity.movieStartTime.substr(5,2)}月${userEntity.movieStartTime.substr(8,2)}日 ${userEntity.movieStartTime.substr(10,6)}</td>
+                <td class="cinema_name">${userEntity.cinemaName}</td>
+                <td>
+                    <span class="hall">${userEntity.hallName}</span>
+                    <span class="seats">
+                        <i>${userEntity1.seatList[i].seatLine}</i>
+                        排
+                        <i>${userEntity1.seatList[i].seatColumn}</i>
+                        座
+                    </span>
+                </td>
+            </tbody>
+            `
+        }
+        var parent = $(".order_table").eq(0);
+        parent.append(str);
+        var maxtime;
+        $(".price").html(`￥${userEntity1.orderMoney}`)
+        $.ajax({
+            url: `http://localhost:8080/getOrderTime/${userEntity2.orderId}`,
+            type: 'get',
+            dataType: 'json',
+            async: false,
+            contentType: 'application/json;charset=UTF-8',
+            success: data => {
+                
+                maxtime =Number(data.time-1)  //一个小时，按秒计算，自己调整!  
+                console.log(maxtime)
+                if(maxtime>0){
+                minutes = Math.floor(maxtime / 60);
+                seconds = Math.floor(maxtime % 60);
+                // msg = "距离结束还有"+minutes+"分"+seconds+"秒";  
+                $("#timer").empty();
+                var str = ``;
+                str += `请在<span class="minute">${minutes}</span> 分钟
+            <span class="second">${seconds}</span> 秒内完成支付
+        `
+                var parent = $("#timer");
+                parent.append(str)
+                }
+                
+            }
+        })
+
+        function CountDown() {
+            if (maxtime >= 0) {
+                minutes = Math.floor(maxtime / 60);
+                seconds = Math.floor(maxtime % 60);
+                // msg = "距离结束还有"+minutes+"分"+seconds+"秒";  
+                $("#timer").empty();
+                var str = ``;
+                str += `请在<span class="minute">${minutes}</span> 分钟
+            <span class="second">${seconds}</span> 秒内完成支付
+        `
+                var parent = $("#timer");
+                parent.append(str)
+                if (maxtime == 5 * 60) alert('注意，还有5分钟!');
+                --maxtime;
+            } else {
+                clearInterval(timer);
+                alert("时间到，结束!");
+                $(".pay_btn a").html("无法支付")
+                $(".pay_btn").css({"background-color":"#e5e5e5"});
+                $(".pay_btn a").css({
+                                "cursor":"pointer",
+                                "pointer-events": "none"
+                                })
+            }
+        }
+        
+        timer = setInterval("CountDown()",1000);  
+    </script>
+    
+    <script src="../static/js/header.js"></script>
+</body>
+
+</html>

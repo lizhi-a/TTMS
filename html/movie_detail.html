@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="../static/js/node_modules/layui/dist/css/layui.css" media="all">
+  <link rel="stylesheet" href="../static/css/movie_detail.css">
+  <link rel="stylesheet" href="../static/css/reset.css">
+  <link rel="stylesheet" href="../static/css/iconfont.css">
+  <link rel="stylesheet" href="../static/css/movieIntroduce.css">
+  <link rel="stylesheet" href="../static/css/cinemaName.css">
+</head>
+
+<body>
+  <div id="header"> 电影详情 </div>
+  <div class="banner">
+    <div id="movieHead_box">
+      <img class="movieHead" style="object-fit: cover;" width="218px" height="300px" id="selected_img" src="" alt="">
+      <img id="edit_movieHead" src="../static/image/edit_pen.png" alt="">
+      <input type="file" id="file_movieHead" name="head" onchange="previewImage(this)" />
+    </div>
+    <div class="film_details">
+      <img id="edit_movie_intro" src="../static/image/edit_white.png" alt="">
+      <p class="film_name"></p>
+      <p class="film_line"></p>
+      <p class="film_line"></p>
+      <p class="film_line"></p>
+      <p class="film_line"><img width="30px" height="30px" src="../static/image/love.png" alt=""></p>
+    </div>
+  </div>
+  <div class="container">
+    <p class="all_credit">演职人员</p>
+    <!-- 左侧所有演职人员 -->
+    <div class="credit_title">
+      <!-- 导演 -->
+      <div class="crew" id="direct_list">
+        <p class="crew_sort iconfont">&#xe75f;导演： </p>
+        <!-- <div class="crew_box">
+          <img class="crew_icon"
+            src="https://p0.meituan.net/movie/af1c96e98b0877f0c17bd135cbc5314e38556.jpg@128w_170h_1e_1c" alt="">
+          <div class="crew_describe">
+            <p class="crew_name">彭于晏</p>
+          </div>
+        </div> -->
+      </div>
+      <!-- 演员 -->
+      <div class="crew" id="actor_list">
+        <p class="crew_sort iconfont">&#xe75f;演员： </p>
+        <!-- <div class="crew_box">
+          <img class="crew_icon"
+            src="https://p0.meituan.net/movie/af1c96e98b0877f0c17bd135cbc5314e38556.jpg@128w_170h_1e_1c" alt="">
+          <div class="crew_describe">
+            <p class="crew_name">彭于晏</p>
+            <p class="crew_portray">饰：王学明</p>
+          </div>
+        </div> -->
+      </div>
+      <!-- 编剧 -->
+      <div class="crew" id="writer_list">
+        <p class="crew_sort iconfont">&#xe75f;编剧： </p>
+        <!-- <div class="crew_box">
+          <img class="crew_icon"
+            src="https://p0.meituan.net/movie/af1c96e98b0877f0c17bd135cbc5314e38556.jpg@128w_170h_1e_1c" alt="">
+          <div class="crew_describe">
+            <p class="crew_name">彭于晏</p>
+          </div>
+        </div> -->
+      </div>
+      <!-- 制片人 -->
+      <div class="crew" id="producer_list">
+        <p class="crew_sort iconfont">&#xe75f;制片人：</p>
+        <!-- <div class="crew_box">
+          <img class="crew_icon"
+            src="https://p0.meituan.net/movie/af1c96e98b0877f0c17bd135cbc5314e38556.jpg@128w_170h_1e_1c" alt="">
+          <div class="crew_describe">
+            <p class="crew_name">彭于晏</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- 右侧预告片 -->
+    <div class="related">
+      <div class="Title">
+        <div class="Title-yu"><a href="#">预告片</a></div>
+      </div>
+      <div class="boxx1">
+        <div class="boxx1-title iconfont">&#xe75f;预告片</div>
+        <div class="boxx1-content" id="video_list">
+          <div class="bo">
+            <a href="#">
+              <img src="../static/image/001.png" alt="">
+            </a>
+            <a href="#">
+              <div class="ms">《我的姐姐》电影《我的姐姐...</div>
+            </a>
+            <br>
+            <div class="bf">467.5万</div>
+          </div>
+          <div class="bo">
+            <a href="#">
+              <img src="../static/image/010.png" alt="">
+            </a>
+            <a href="#">
+              <div class="ms">《我的姐姐》电影《我的姐姐...</div>
+            </a>
+            <br>
+            <div class="bf">171.4万</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 
+        附加板块
+        内容：电影板块的 新增、编辑电影弹框html
+       -->
+  <div id="float_movie" class="float_Popout">
+    <form class="layui-form edit_Popout" id="edit_movie_form" action="">
+      <input id="edit_cinema_id" name="id" hidden value=""></input>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影名称:</label>
+        <div class="layui-input-inline">
+          <input id="edit_movie_name" type="text" style="width: 300px;" name="name" required lay-verify="required"
+            placeholder="请输入电影名称" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item" id="new_movie_status">
+        <label class="layui-form-label">电影状态：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <select name="status" lay-verify="">
+              <option value="">请选择一个状态</option>
+              <option value="1">正在热映</option>
+              <option value="2">即将上映</option>
+              <option value="3">热播电影</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">上映时间：</label>
+        <div class="layui-input-inline">
+          <div class="layui-input-inline" style="width: 300px;">
+            <input id="area-picker-start" type="text" name="start_time" required lay-verify="required"
+              placeholder="请输入电影上映时间" autocomplete="off" class="layui-input">
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影时长:</label>
+        <div class="layui-input-inline">
+          <input id="edit_movie_during" type="text" style="width: 300px;" name="time" required lay-verify="required"
+            placeholder="请输入电影时长" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影类型:</label>
+        <div class="layui-input-inline">
+          <input id="edit_movie_type" type="text" style="width: 300px;" name="sort" required lay-verify="required"
+            placeholder="请输入电影类型" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <label class="layui-form-label">电影简介:</label>
+        <div class="layui-input-inline">
+          <!-- <input type="text" name="email" required lay-verify="required" placeholder="请输入邮箱" autocomplete="off"
+                    class="layui-input"> -->
+          <textarea name="brief" id="edit_movie_brief" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+          <button id="edit_movie_submit" class="layui-btn" lay-submit lay-filter="edit_movie_form">立即提交</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+          <button type="reset" id="cancel_edit_movie" class="layui-btn layui-btn-primary">取消</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="../static/js/node_modules/jquery/dist/jquery.js"></script>
+  <script src="../static/js/node_modules/layui/dist/layui.js"></script>
+  <script src="../static/js/movie_detail.js"></script>
+  <!-- 时间日期选择器 -->
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      laydate.render({
+        elem: '#area-picker-start',
+        type: 'datetime'
+      });
+
+    });
+  </script>
+  <script>
+
+    var userJsonStr = sessionStorage.getItem('movieDetail')
+    var userEntity = JSON.parse(userJsonStr)
+
+    function previewImage(file) {
+      var selected_img = document.getElementById('selected_img');
+      var reader = new FileReader();
+      reader.onload = function (evt) {
+        selected_img.src = evt.target.result;
+        console.log(evt.target.result)
+        // let obj = {
+        //   "head": evt.target.result
+        // }
+        // obj = JSON.stringify(obj)
+        // console.log(obj)
+        $.ajax({
+          url: `http://localhost:8080/setHead/${userEntity.id}`,
+          type: 'post',
+          data: evt.target.result,
+          dataType: 'json',
+          catch: false,      //清除上次请求的缓存
+          contentType: false,
+          processData: false,
+          async: false,
+          cache: false,
+          // contentType: "multipart/form-data",
+          contentType: "multipart / form - data; boundary = OCqxMF6 - JxtxoMDHmoG5W5eY9MGRsTBp"
+          , success: data => {
+            console.log('修改头像成功')
+          }
+        })
+      }
+      reader.readAsDataURL(file.files[0]);
+    }
+
+    // function previewImage(file) {
+    //   var selected_img = document.getElementById('selected_img');
+    //   var reader = new FileReader();
+
+    //   var formData = new FormData();
+    //   formData.append("mFile", $("#file_movieHead")[0].files[0]);
+
+    //   reader.onload = function (evt) {
+    //     selected_img.src = evt.target.result;
+    //     console.log(evt.target.result)
+
+    //     var formData = new FormData();
+    //     formData.append("mFile", $("#file_movieHead")[0].files[0]);
+    //     console.log($("#file_movieHead")[0].files[0])
+    //     var a = $("#file_movieHead")[0].files[0]
+
+    //     console.log(a)
+
+    //     $.ajax({
+    //       url: `http://localhost:8080/setHead/${userEntity.id}`,
+    //       type: 'post',
+    //       data: a,
+    //       dataType: 'json',
+    //       catch: false,      //清除上次请求的缓存
+    //       contentType: false,
+    //       contentType: 'multipart/form-data',
+    //       processData: false,  // 增加这一行，不处理参数
+    //       // async: false,
+    //       // cache: false,
+    //       enctype: "multipart/form-data",
+    //       success: data => {
+    //         console.log('修改头像成功')
+    //       }
+    //     })
+    //   }
+    //   reader.readAsDataURL(file.files[0]);
+    // }
+
+  </script>
+</body>
+
+</html>
